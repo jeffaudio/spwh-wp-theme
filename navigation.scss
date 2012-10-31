@@ -1,0 +1,136 @@
+/* Navigation */
+.nav { 
+    width: 100%;
+margin: .2ex 0 1.2ex;
+    text-align: center;
+    position: relative;
+    padding: 1ex 1ex;
+    left: -1ex;
+    
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+    -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+    -ms-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+    
+background: #417880; /* Old browsers */
+background: -moz-linear-gradient(top,  #417880 0%, #2d5559 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#417880), color-stop(100%,#2d5559)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #417880 0%,#2d5559 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #417880 0%,#2d5559 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #417880 0%,#2d5559 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #417880 0%,#2d5559 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#417880', endColorstr='#2d5559',GradientType=0 ); /* IE6-9 */
+
+	color: white;
+    text-shadow: #5c5cd6 0 1px 0;
+    -o-text-shadow: #5c5cd6 0 1px 0;
+    -moz-text-shadow: #5c5cd6 0 1px 0;
+    -webkit-text-shadow: #5c5cd6 0 1px 0;
+    -ms-text-shadow: #5c5cd6 0 1px 0;
+    
+}
+
+.nav ul { 
+    padding: 0;
+    margin: 0;
+    margin-bottom: -1.3em;
+    width: 100%;
+	list-style: none;
+	display: inline-table;
+
+}
+
+.nav ul li {
+	float: left;
+	padding: 0 0.5em;
+    line-height: 2.3em;
+    top: -1ex;
+    bottom: -1ex;
+    position: relative;
+}
+
+
+.nav ul:before, .nav ul:after { 
+    position: absolute;
+    display: block;
+    border-style: solid;
+    bottom: -0.99ex;
+    content: '';
+    border-color: #333333 transparent transparent transparent;
+}
+
+.nav ul:before { 
+    border-width: 1ex 0 0 1ex;
+    left: 0;
+}
+
+.nav ul:after { 
+    border-width: 1ex 1ex 0 0;
+    right: 0;
+}
+
+.nav:before, .nav:after { 
+    border-color: #333333;
+}
+
+.nav:before { 
+    border-left-color: transparent;
+}
+
+.nav:after { 
+    border-right-color: transparent;
+}
+
+.nav ul li a {
+	color: white;
+	text-shadow: 0 -1px black;
+}
+
+/* submenus */
+.nav ul ul {
+	display: none;  
+	background: #417880;
+	position: absolute;
+	top: 100%;
+	width: auto;
+	box-shadow: 0 1px 2px black
+}
+
+.nav ul ul:after, .nav ul ul:before {
+	border: 0;
+	padding: 1em;
+}
+
+.nav ul ul li {
+	float: none;
+	position: relative;
+	padding: .25em
+}
+
+.nav ul ul li a {
+	color: #fff;
+	width: 100%;
+	height: 100%;
+}
+
+.nav ul ul li a:hover {
+	background: #4b545f;
+}
+
+.nav ul ul ul {
+	position: absolute;
+	left: 100%;
+	top: 0;
+}
+
+.nav ul li:hover {
+    background: rgba(0, 0, 0, .12);
+}
+
+/* submenus on hover */
+.nav ul li:hover > ul{
+	display: block;
+   
+}
+

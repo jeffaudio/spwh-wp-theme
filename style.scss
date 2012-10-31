@@ -1,0 +1,67 @@
+/*
+Theme Name: House Theme
+Theme URI: localhost
+Description: WP Theme for our house blog.
+Author: Jeff Hentschel
+Author URI: localhost
+Version: 1.0
+*/
+
+@import "navigation";
+@import "blog";
+@import "k";
+@import "compass/css3/images";
+
+body {
+	font-family: Lucida Grande, Helvetica, Arial, sans-serif;
+	background: linear-gradient(left top, right top, color-stop(0%,$raindrop), color-stop(50%,$raindrop), color-stop(50%,$big-chill));
+	background-size: 15px 10px;
+	color: black;
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 85%;
+	text-align: left;
+	background: #fff;
+	padding: 2em 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	position: absolute;
+	box-shadow: 0 0 10px black;
+}
+
+header {
+	padding: 0 2em;
+}
+
+
+.sidebar {
+	float: left;
+	width: 200px;
+	margin-left: -235px; /* 200px width + 35px border */
+}
+
+footer{
+    clear: both;
+    text-align: center;
+    height: 50px;
+    background: #ccc;
+    padding: 10px;
+}
+
+
+
+
+/* Links */
+a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #555555;
+}
+
