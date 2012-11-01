@@ -10,3 +10,46 @@ $oyster-bay: #ACB3A8;
 $china-doll: #DCCEBE;
 $ancient-marble: #D0CFBB;
 $ski-slope: #E2E5E4;
+
+$sidebar-width: 200px;
+$sidebar-padding: 35px;
+
+@mixin striped-background($color-a, $color-b, $width) {
+	background: $color-a;
+	background: -moz-linear-gradient(left,  $color-a 0%, $color-a 50%, $color-b 50%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,$color-a), color-stop(50%,$color-a), color-stop(50%,$color-b));
+	background: -webkit-linear-gradient(left,  $color-a 0%,$color-a 50%,$color-b 50%);
+	background: -o-linear-gradient(left,  $color-a 0%,$color-a 50%,$color-b 50%);
+	background: -ms-linear-gradient(left,  $color-a 0%,$color-a 50%,$color-b 50%);
+	background: linear-gradient(to right,  $color-a 0%,$color-a 50%,$color-b 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-a', endColorstr='$color-b',GradientType=1 );
+	background-size: $width 2px;
+}
+
+@mixin vertical-gradient($top, $bottom) {
+	background: $top;
+	background: -moz-linear-gradient(top,  $top 0%, $bottom 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom));
+	background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%);
+	background: -o-linear-gradient(top,  $top 0%,$bottom 100%);
+	background: -ms-linear-gradient(top,  $top 0%,$bottom 100%);
+	background: linear-gradient(to bottom,  $top 0%,$bottom 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+}
+
+@mixin text-shadow($color, $x, $y, $z) {
+	text-shadow: $color $x $y $z;
+	-o-text-shadow: $color $x $y $z;
+	-moz-text-shadow: $color $x $y $z;
+	-webkit-text-shadow: $color $x $y $z;
+	-ms-text-shadow: $color $x $y $z;   
+}
+
+@mixin box-shadow($color, $x, $y, $z) {
+	box-shadow: $color $x $y $z;
+	-o-box-shadow: $color $x $y $z;
+	-moz-box-shadow: $color $x $y $z;
+	-webkit-box-shadow: $color $x $y $z;
+	-ms-box-shadow: $color $x $y $z;
+}
+

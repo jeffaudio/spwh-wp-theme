@@ -1,10 +1,9 @@
 <footer>
 	<p>
-		<strong>Copyright 2012 <?php bloginfo('name'); ?> | All Rights Reserved.</strong>
-		Designed by Jeff Hentschel
+		<strong>Copyright &copy; 2012 <?php bloginfo('name'); ?></strong>
+		<br />Jeff & Hillary Hentschel
 	</p>
-	<p><a href="<?php bloginfo('rss2_url'); ?>">Latest Storesi RSS</a> | <a href="<?php comments_rss_link('comment feed'); ?>">Comments RSS</a></p>
 </footer>
-
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 </body>
 </html>

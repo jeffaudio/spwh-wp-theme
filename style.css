@@ -1,63 +1,427 @@
 /*
-Syntax error: File to import not found or unreadable: compass/css3/images.
-              Load paths:
-                /Users/jeff/Dropbox/git/house-wp-theme
-                /Users/jeff/Dropbox/git/house-wp-theme
-                /Users/jeff/Dropbox/git/house-wp-theme
-        on line 13 of ./style.scss
-
-8: */
-9: 
-10: @import "navigation";
-11: @import "blog";
-12: @import "k";
-13: @import "compass/css3/images";
-14: 
-15: body {
-16: 	font-family: Lucida Grande, Helvetica, Arial, sans-serif;
-17: 	background: linear-gradient(left top, right top, color-stop(0%,$raindrop), color-stop(50%,$raindrop), color-stop(50%,$big-chill));
-18: 	background-size: 15px 10px;
-
-Backtrace:
-./style.scss:13
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/import_node.rb:64:in `import'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/import_node.rb:25:in `imported_file'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:227:in `visit_import'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:107:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:119:in `with_environment'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:106:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:126:in `visit_root'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/engine.rb:315:in `_render'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/engine.rb:262:in `render'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/plugin/compiler.rb:340:in `update_stylesheet'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/plugin/compiler.rb:202:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/plugin/compiler.rb:200:in `each'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/plugin/compiler.rb:200:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/plugin/compiler.rb:234:in `watch'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/plugin.rb:107:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/plugin.rb:107:in `method_missing'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/exec.rb:431:in `watch_or_update'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/exec.rb:302:in `process_result'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/exec.rb:41:in `parse'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/../lib/sass/../sass/exec.rb:21:in `parse!'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.1/bin/sass:8
-/usr/bin/sass:19:in `load'
-/usr/bin/sass:19
+Theme Name: House Theme
+Theme URI: localhost
+Description: WP Theme for our house blog.
+Author: Jeff Hentschel
+Author URI: localhost
+Version: 1.0
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: compass/css3/images.\A               Load paths:\A                 /Users/jeff/Dropbox/git/house-wp-theme\A                 /Users/jeff/Dropbox/git/house-wp-theme\A                 /Users/jeff/Dropbox/git/house-wp-theme\A         on line 13 of ./style.scss\A \A 8: */\A 9: \A 10: @import \"navigation\";\A 11: @import \"blog\";\A 12: @import \"k\";\A 13: @import \"compass/css3/images\";\A 14: \A 15: body {\A 16: 	font-family: Lucida Grande, Helvetica, Arial, sans-serif;\A 17: 	background: linear-gradient(left top, right top, color-stop(0%,$raindrop), color-stop(50%,$raindrop), color-stop(50%,$big-chill));\A 18: 	background-size: 15px 10px;"; }
+/* Navigation */
+.nav {
+  width: 100%;
+  margin: .2ex 0 1.2ex;
+  text-align: center;
+  position: relative;
+  padding: 1ex 1ex;
+  left: -1ex;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+  -ms-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+  background: #417880;
+  background: -moz-linear-gradient(top, #417880 0%, #2d5559 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #417880), color-stop(100%, #2d5559));
+  background: -webkit-linear-gradient(top, #417880 0%, #2d5559 100%);
+  background: -o-linear-gradient(top, #417880 0%, #2d5559 100%);
+  background: -ms-linear-gradient(top, #417880 0%, #2d5559 100%);
+  background: linear-gradient(to bottom, #417880 0%, #2d5559 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+  text-shadow: #5c5cd6 0 1px 0;
+  -o-text-shadow: #5c5cd6 0 1px 0;
+  -moz-text-shadow: #5c5cd6 0 1px 0;
+  -webkit-text-shadow: #5c5cd6 0 1px 0;
+  -ms-text-shadow: #5c5cd6 0 1px 0;
+  color: white; }
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: -1.3em;
+  width: 100%;
+  list-style: none;
+  display: inline-table; }
+
+.nav ul li {
+  float: left;
+  padding: 0 0.5em;
+  line-height: 2.3em;
+  top: -1ex;
+  bottom: -1ex;
+  position: relative; }
+
+.nav ul:before, .nav ul:after {
+  position: absolute;
+  display: block;
+  border-style: solid;
+  bottom: -0.99ex;
+  content: '';
+  border-color: #333333 transparent transparent transparent; }
+
+.nav ul:before {
+  border-width: 1ex 0 0 1ex;
+  left: 0; }
+
+.nav ul:after {
+  border-width: 1ex 1ex 0 0;
+  right: 0; }
+
+.nav:before, .nav:after {
+  border-color: #333333; }
+
+.nav:before {
+  border-left-color: transparent; }
+
+.nav:after {
+  border-right-color: transparent; }
+
+.nav ul li a {
+  color: white;
+  text-shadow: 0 -1px black; }
+
+/* submenus */
+.nav ul ul {
+  display: none;
+  background: #417880;
+  position: absolute;
+  top: 100%;
+  width: auto;
+  box-shadow: 0 1px 2px black; }
+
+.nav ul ul:after, .nav ul ul:before {
+  border: 0;
+  padding: 1em; }
+
+.nav ul ul li {
+  float: none;
+  position: relative;
+  padding: 0.25em; }
+
+.nav ul ul li a {
+  color: #fff;
+  width: 100%;
+  height: 100%; }
+
+.nav ul ul li a:hover {
+  background: #4b545f; }
+
+.nav ul ul ul {
+  position: absolute;
+  left: 100%;
+  top: 0; }
+
+.nav ul li:hover {
+  background: rgba(0, 0, 0, 0.12); }
+
+/* submenus on hover */
+.nav ul li:hover > ul {
+  display: block; }
+
+#blog_container {
+  float: left;
+  width: 100%;
+  margin-bottom: 2em; }
+
+#blog {
+  margin-right: 235px;
+  /* sidebar+border width */
+  padding: 0 35px;
+  padding-top: 1em;
+  font-size: .85em; }
+  #blog a {
+    color: #417880; }
+    #blog a:hover {
+      color: #9fc5c8; }
+  #blog a.more-link {
+    font-style: italic; }
+    #blog a.more-link:hover {
+      font-weight: bold; }
+
+#blog header {
+  padding: 0;
+  color: #417880;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 1em; }
+
+#blog h3.title {
+  padding: 0;
+  margin: 0;
+  padding-bottom: .2em;
+  border-bottom: 1px solid #417880;
+  font-size: 1.5em; }
+
+.tagline {
+  padding-top: .2em;
+  font-size: 0.8em;
+  color: #417880; }
+  .tagline a {
+    color: #417880;
+    font-style: italic; }
+    .tagline a:hover {
+      font-weight: bold; }
+    .tagline a:visited {
+      color: #417880; }
+    .tagline a:link {
+      color: #417880; }
+
+#blog footer {
+  background: white;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  font-size: .8em;
+  color: #417880; }
+  #blog footer a {
+    font-style: italic;
+    color: #417880; }
+    #blog footer a:hover {
+      font-weight: bold; }
+
+article.post {
+  padding-bottom: 4em; }
+
+#blog .label {
+  display: inline;
+  color: black;
+  font-weight: bold; }
+
+#blog .social {
+  float: right; }
+
+.sidebar {
+  font-size: .85em;
+  list-style: none;
+  padding-top: 1em;
+  margin-bottom: 2em; }
+  .sidebar h2 {
+    font-size: 1em;
+    border-bottom: 1px solid #417880;
+    padding-bottom: 0.2em;
+    color: #417880; }
+  .sidebar form {
+    width: 100%; }
+    .sidebar form #s {
+      width: 135px;
+      border-radius: 5px;
+      padding-left: .5em;
+      height: 1.5em; }
+    .sidebar form #searchsubmit {
+      height: 2em; }
+  .sidebar ul {
+    list-style: none;
+    padding: 0; }
+
+/* Alignment */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.625em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.625em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* Attachments */
+.singular .image-attachment .entry-content {
+  margin: 0 auto;
+  width: auto; }
+
+.singular .image-attachment .entry-description {
+  margin: 0 auto;
+  width: 68.9%; }
+
+/* Images */
+.entry-content img,
+.comment-content img,
+.widget img {
+  max-width: 97.5%;
+  /* Fluid images for posts, comments, and widgets */ }
+
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
+
+img.size-full,
+img.size-large {
+  max-width: 97.5%;
+  width: auto;
+  /* Prevent stretching of full-size and large-size images with height and width attributes in IE8 */
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
+
+.entry-content img.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+img.alignleft,
+img.alignright,
+img.aligncenter {
+  margin-bottom: 1.625em; }
+
+p img,
+.wp-caption {
+  margin-top: 0.4em; }
+
+.wp-caption {
+  background: #d0cfca;
+  margin-bottom: 1.625em;
+  max-width: 96%;
+  padding: 9px; }
+
+.wp-caption img {
+  display: block;
+  margin: 0 auto;
+  max-width: 98%; }
+
+.wp-caption .wp-caption-text,
+.gallery-caption {
+  color: #666;
+  font-family: Georgia, serif;
+  font-size: 12px; }
+
+.wp-caption .wp-caption-text {
+  margin-bottom: 0.6em;
+  padding: 10px 0 5px 40px;
+  position: relative; }
+
+.wp-caption .wp-caption-text:before {
+  color: #666;
+  content: '\2014';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  margin-right: 5px;
+  position: absolute;
+  left: 10px;
+  top: 7px; }
+
+#content .gallery {
+  margin: 0 auto 1.625em; }
+
+#content .gallery a img {
+  border: none; }
+
+img#wpstats {
+  display: block;
+  margin: 0 auto 1.625em; }
+
+#content .gallery-columns-4 .gallery-item {
+  width: 23%;
+  padding-right: 2%; }
+
+#content .gallery-columns-4 .gallery-item img {
+  width: 100%;
+  height: auto; }
+
+body {
+  font-family: Lucida Grande, Helvetica, Arial, sans-serif;
+  background: #9fc5c8;
+  background: -moz-linear-gradient(left, #9fc5c8 0%, #9fc5c8 50%, #d0cfca 50%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #9fc5c8), color-stop(50%, #9fc5c8), color-stop(50%, #d0cfca));
+  background: -webkit-linear-gradient(left, #9fc5c8 0%, #9fc5c8 50%, #d0cfca 50%);
+  background: -o-linear-gradient(left, #9fc5c8 0%, #9fc5c8 50%, #d0cfca 50%);
+  background: -ms-linear-gradient(left, #9fc5c8 0%, #9fc5c8 50%, #d0cfca 50%);
+  background: linear-gradient(to right, #9fc5c8 0%, #9fc5c8 50%, #d0cfca 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color-a', endColorstr='$color-b',GradientType=1 );
+  background-size: 15px 2px;
+  color: black; }
+
+#wrapper {
+  margin: 0 auto;
+  width: 85%;
+  text-align: left;
+  background: #fff;
+  padding: 2em 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  box-shadow: 0 0 10px black;
+  margin-bottom: 0;
+  padding-bottom: 0; }
+
+header {
+  padding: 0;
+  text-align: center;
+  margin-top: -1.5em; }
+  header #tagline {
+    font-size: .8em; }
+
+.sidebar {
+  float: left;
+  width: 200px;
+  margin-left: -235px;
+  /* 200px width + 35px border */ }
+
+footer {
+  clear: both;
+  text-align: center;
+  background: #d0cfca;
+  padding: 1em;
+  margin: 0;
+  font-size: .75em; }
+
+/* Links */
+a:link, a:visited {
+  text-decoration: none;
+  color: black; }
+
+a:hover {
+  text-decoration: none;
+  color: #555555; }
+
+.navigation #previous {
+  display: inline; }
+.navigation #next {
+  display: inline;
+  float: right; }
+.navigation a:hover {
+  font-weight: bold; }
+
+form input[type='submit'] {
+  width: 50px;
+  background: #c9cd9c;
+  background: -moz-linear-gradient(top, #c9cd9c 0%, #dccebe 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9cd9c), color-stop(100%, #dccebe));
+  background: -webkit-linear-gradient(top, #c9cd9c 0%, #dccebe 100%);
+  background: -o-linear-gradient(top, #c9cd9c 0%, #dccebe 100%);
+  background: -ms-linear-gradient(top, #c9cd9c 0%, #dccebe 100%);
+  background: linear-gradient(to bottom, #c9cd9c 0%, #dccebe 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid #57474f;
+  padding: 0.25em; }
+
+#social {
+  height: 32px;
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines; }
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  zoom: 1; }
+
+#social:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0; }

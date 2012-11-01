@@ -7,15 +7,14 @@ Author URI: localhost
 Version: 1.0
 */
 
+@import "k";
 @import "navigation";
 @import "blog";
-@import "k";
-@import "compass/css3/images";
+@import "post";
 
 body {
 	font-family: Lucida Grande, Helvetica, Arial, sans-serif;
-	background: linear-gradient(left top, right top, color-stop(0%,$raindrop), color-stop(50%,$raindrop), color-stop(50%,$big-chill));
-	background-size: 15px 10px;
+	@include striped-background($raindrop, $big-chill, 15px);
 	color: black;
 }
 
@@ -30,10 +29,18 @@ body {
 	top: 0;
 	position: absolute;
 	box-shadow: 0 0 10px black;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 header {
-	padding: 0 2em;
+	padding: 0;
+	text-align: center;
+	margin-top: -1.5em;
+	
+	#tagline {
+		font-size: .8em;
+	}
 }
 
 
@@ -46,9 +53,10 @@ header {
 footer{
     clear: both;
     text-align: center;
-    height: 50px;
-    background: #ccc;
-    padding: 10px;
+    background: $big-chill;
+    padding: 1em;
+    margin: 0;
+    font-size: .75em;
 }
 
 
@@ -65,3 +73,56 @@ a:hover {
 	color: #555555;
 }
 
+.navigation {
+	#previous {
+		display: inline;
+	}
+	
+	#next {
+		display: inline;
+		float: right;
+	}
+	
+	a:hover {
+		font-weight: bold;
+	}
+}
+
+form input[type='submit'] {
+	width: 50px;
+	@include vertical-gradient($shagreen, $china-doll);
+	height: 100%;
+	border-radius: 5px;
+	border: 1px solid $chambourd;
+	padding: 0.25em;
+}
+
+		
+$icon-height: 32px;
+
+#social {
+	height: $icon-height;
+	text-align: justify;
+	-ms-text-justify: distribute-all-lines;
+	text-justify: distribute-all-lines;
+
+}
+
+
+.social-icon {
+    width: $icon-height;
+    height: $icon-height;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+	
+#social:after {
+	content: '';
+	width: 100%;
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+}
