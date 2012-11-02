@@ -129,3 +129,23 @@ article.post {
 		padding: 0;
 	}
 }
+
+#blog .social-counts {
+	margin-top: 1em; 
+}
+
+.interaction {
+	display: inline-block;
+	height: 20px;
+	vertical-align: bottom;
+}
+	
+#comments-count {
+	line-height: 9px;
+	border: 1px solid black;
+	padding: 5px 7px;
+	margin: 0;
+	height: 9px; 
+	border-radius: 3px;
+	float: right;
+}

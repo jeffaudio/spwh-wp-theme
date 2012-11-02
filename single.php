@@ -24,14 +24,18 @@
 				<div class="label"><?php _e('Categories'); ?></div> <?php the_category(', ') ?> <br />
 				<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
 			</div>
-			<div class="social">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" data-via="jeffandhillary">Tweet</a>
+			
+			<div class="social-counts">
+				<div class="interaction"><?php if (function_exists('sfc_like_button')) echo sfc_like_button(array()); ?></div>
+				<div class="interaction">
+			
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" data-via="jeffandhillary">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-			<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
+				</div>
 			</div>
-		</footer>
+
+			
+					</footer>
 		
 
 		

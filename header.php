@@ -26,9 +26,11 @@
 		<p id="tagline"><?php bloginfo('description') ?></p>
 	</header>
 	
+	<nav>
 	<?php 
 			wp_nav_menu(array('sort_column'=>'menu_order', 
 						'menu_class'=>'nav', 
 						'theme_location'=>'primary-menu')); 	
 		?>
+	</nav>
 							

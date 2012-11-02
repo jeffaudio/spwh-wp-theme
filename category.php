@@ -1,41 +1,40 @@
 <?php get_header(); ?>
- 
+
+<div id="blog_container">
     <div id="blog">
-        <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-         
-    <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
-      <?php /* If this is a category archive */ if (is_category()) { ?>
-        <h2>Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category:</h2>
-      <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-        <h2>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h2>
-      <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-        <h2>Archive for <?php the_time('F jS, Y'); ?>:</h2>
-      <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-        <h2>Archive for <?php the_time('F, Y'); ?>:</h2>
-      <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-        <h2>Archive for <?php the_time('Y'); ?>:</h2>
-      <?php /* If this is an author archive */ } elseif (is_author()) { ?>
-        <h2>Author Archive</h2>
-      <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-        <h2>Blog Archives</h2>
-    <?php } ?>
-         
-        <div class="post">
-        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
- 
-            <div class="entry">
-            <?php the_content(); ?>
- 
-                <p class="postmetadata">
-                <?php _e('Filed under&#58;'); ?> <?php the_category(', ') ?> <?php _e('by'); ?> <?php  the_author(); ?><br />
-                <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php edit_post_link('Edit', ' &#124; ', ''); ?>
-                </p>
- 
-            </div>
- 
-        </div>
-         
-<?php endwhile; ?>
+        <?php if(have_posts()) : ?>
+        
+        <header class="page-header">
+            <h1><?php single_cat_title(); ?></h1>
+        </header>
+        
+        <?php while(have_posts()) : the_post(); ?>
+                 
+	<article class="post">
+		<header>
+			<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<div class="tagline">
+				<?php _e("Posted on"); ?> <?php the_time("l, M. j, Y"); ?> <?php _e("at"); ?> <?php the_time("g:i A"); ?> <?php _e("by"); ?> <?php the_author_posts_link(); ?> <?php edit_post_link('Edit', '&#124; ', ''); ?>
+			</div>
+		</header>
+		
+		<div class="entry">
+			<?php the_post_thumbnail(); ?>
+			<?php the_content('Continue Reading...'); ?>
+		</div>
+		
+		<footer>
+			<div class="postmetadata">
+				<div class="label"><?php _e('Categories'); ?></div> <?php the_category(', ') ?> <br />
+				<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
+			</div>
+			<div class="social-counts">
+				<div id="comments-count" class="interaction"><?php comments_popup_link('0 Comments', '1 Comment', '% Comments'); ?></div>
+			</div>
+		</footer>
+	</article>
+	
+	<?php endwhile; ?>
  
     <div class="navigation">
         <?php posts_nav_link(); ?>
@@ -43,6 +42,7 @@
  
 <?php endif; ?>
  
+</div>
 </div>
  
 <?php get_sidebar(); ?>   

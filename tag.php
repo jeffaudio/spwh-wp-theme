@@ -1,9 +1,14 @@
 <?php get_header(); ?>
 
+
+
 <div id="blog_container">
-<section id="blog">
+    <div id="blog">
+    
 	<?php if(have_posts()) : ?>
-	
+<header class="page-header">
+        <h1><?php single_tag_title(); ?></h1>
+    </header>   
 	<?php while(have_posts()) : the_post(); ?>
                  
 	<article class="post">
@@ -30,16 +35,16 @@
 		</footer>
 	</article>
 	
-	<?php endwhile; ?> 
-		
-	<div class="navigation">
-		<div id="previous"><? previous_posts_link(); ?></div>
-		<div id="next"><? next_posts_link(); ?></div>
-	</div>
-	
-	<?php endif; ?>
-</section>
+	<?php endwhile; ?>
+ 
+    <div class="navigation">
+        <?php posts_nav_link(); ?>
+    </div>
+ 
+<?php endif; ?>
+ 
 </div>
-
-<?php get_sidebar(); ?>
+</div>
+ 
+<?php get_sidebar(); ?>   
 <?php get_footer(); ?>

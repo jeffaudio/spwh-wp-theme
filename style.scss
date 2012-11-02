@@ -3,8 +3,8 @@ Theme Name: House Theme
 Theme URI: localhost
 Description: WP Theme for our house blog.
 Author: Jeff Hentschel
-Author URI: localhost
-Version: 1.0
+Author URI: http://www.softpuppywarmhouse.com/
+Version: 1.0.1
 */
 
 @import "k";
@@ -98,7 +98,7 @@ form input[type='submit'] {
 }
 
 		
-$icon-height: 32px;
+$icon-height: 34px;
 
 #social {
 	height: $icon-height;
@@ -118,7 +118,7 @@ $icon-height: 32px;
     zoom: 1;
 }
 
-	
+
 #social:after {
 	content: '';
 	width: 100%;
@@ -126,3 +126,4 @@ $icon-height: 32px;
 	font-size: 0;
 	line-height: 0;
 }
+
