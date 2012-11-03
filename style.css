@@ -233,6 +233,9 @@ article.post {
   border-radius: 3px;
   float: right; }
 
+.wp-caption .wp-caption-text {
+  color: black; }
+
 /* Alignment */
 .alignleft {
   display: inline;
@@ -274,7 +277,7 @@ img[class*="attachment-"] {
 
 img.size-full,
 img.size-large {
-  max-width: 97.5%;
+  max-width: 100%;
   width: auto;
   /* Prevent stretching of full-size and large-size images with height and width attributes in IE8 */
   height: auto;
@@ -308,25 +311,12 @@ p img,
 
 .wp-caption .wp-caption-text,
 .gallery-caption {
-  color: #666;
-  font-family: Georgia, serif;
-  font-size: 12px; }
+  color: black; }
 
 .wp-caption .wp-caption-text {
   margin-bottom: 0.6em;
   padding: 10px 0 5px 40px;
   position: relative; }
-
-.wp-caption .wp-caption-text:before {
-  color: #666;
-  content: '\2014';
-  font-size: 14px;
-  font-style: normal;
-  font-weight: bold;
-  margin-right: 5px;
-  position: absolute;
-  left: 10px;
-  top: 7px; }
 
 #content .gallery {
   margin: 0 auto 1.625em; }
@@ -345,6 +335,30 @@ img#wpstats {
 #content .gallery-columns-4 .gallery-item img {
   width: 100%;
   height: auto; }
+
+.spread-wrapper {
+  width: 100%; }
+  .spread-wrapper .spread {
+    text-align: justify;
+    padding: 0;
+    margin: 0; }
+    .spread-wrapper .spread .spread-item {
+      vertical-align: top;
+      display: inline-block;
+      zoom: 1; }
+      .spread-wrapper .spread .spread-item.two-spread {
+        width: 49%; }
+      .spread-wrapper .spread .spread-item.three-spread {
+        width: 32%; }
+      .spread-wrapper .spread .spread-item img {
+        width: 100%;
+        height: auto; }
+  .spread-wrapper .spread:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0; }
 
 body {
   font-family: Lucida Grande, Helvetica, Arial, sans-serif;

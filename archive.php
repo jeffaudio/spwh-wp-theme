@@ -31,7 +31,6 @@
 		</header>
 		
 		<div class="entry">
-			<?php the_post_thumbnail(); ?>
 			<?php the_content('Continue Reading...'); ?>
 		</div>
 		
