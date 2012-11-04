@@ -5,7 +5,7 @@
 	<html xmlns:fb="http://ogp.me/ns/fb#">
 	
 	<title><?php wp_title('|', true, 'right'); ?></title>
-	
+	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?> />
@@ -39,10 +39,15 @@
 	</header>
 	
 	<nav>
+		<div class="nav-banner">
 	<?php 
-			wp_nav_menu(array('sort_column'=>'menu_order', 
+			$menu = wp_nav_menu(array('sort_column'=>'menu_order', 
 						'menu_class'=>'nav', 
-						'theme_location'=>'primary-menu')); 	
+						'theme_location'=>'primary-menu',
+						'echo'=>0));
+			$menu = str_replace("/li><li", "/li> <li", $menu);
+			echo $menu;
 		?>
+		</div>
 	</nav>
 							
