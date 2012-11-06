@@ -1,6 +1,13 @@
 /* Navigation */
 
 /* Ribbon CSS */
+$nav-color: $grand-canal;
+
+
+  
+    
+    
+    
 nav {
 	width: 100%;
 	margin: .2ex 0 1.2ex;
@@ -8,11 +15,13 @@ nav {
 	position: relative; 
 	padding: 0 1ex;
 	left: -1ex;
-	color: white;
 	
-	@include vertical-gradient($grand-canal, darken($grand-canal, 15%));
+	@include text-color($nav-color);
+	
+	@include vertical-gradient($nav-color, darken($nav-color, 15%));
 	@include box-shadow(black, 0, 1px, 1px);
-	@include text-shadow(black, 0, -1px, 0);
+	
+	top: -2ex;
 }
 
 nav .nav-banner {
@@ -25,24 +34,21 @@ nav .nav-banner:before, nav .nav-banner:after {
 	position: absolute;
 	display: block;
 	border-style: solid;
-	bottom: -1.2ex;
+	bottom: -1.1ex;
 	content: '';
 	border-color: #333333 transparent transparent transparent;
 }
 
 nav .nav-banner:before {
-	border-width: 1.1ex 0 0 1.1ex;
+	border-width: 1ex 0 0 1ex;
 	left: 0;
 }
 
 nav .nav-banner:after {
-	border-width: 1.1ex 1.1ex 0 0;
+	border-width: 1ex 1ex 0 0;
 	right: 0;
 }
 
-nav:before, nav:after {
-	border-color: blue;
-}
 
 nav:before {
 	border-left-color: transparent;
@@ -53,7 +59,7 @@ nav:after {
 }
 
 /* Menu CSS */
-.nav ul {
+.menu-nav-container ul {
     list-style: none;
     height: 2em;
     line-height: 2em;
@@ -62,7 +68,7 @@ nav:after {
 	text-justify: distribute-all-lines;
     padding: 0 .5em;
 }
-.nav ul li {
+.menu-nav-container ul li {
     height: 2em;
     vertical-align: top;
     display: inline-block;
@@ -74,15 +80,15 @@ nav:after {
     }
     
     a {
-    	color: white; 
+    	@include text-color($nav-color); 
     }
 }
 
-.nav ul li:hover {
+.menu-nav-container ul li:hover {
 	background: rgba(0, 0, 0, .1);
 }
 
-.nav ul:after {
+.menu-nav-container ul:after {
     content: '';
     width: 100%;
     display: inline-block;
@@ -93,6 +99,6 @@ nav:after {
 
 /* Submenus */
 
-.nav ul ul {
+.menu-nav-container ul ul {
 	display: none;
 }

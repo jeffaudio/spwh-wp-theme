@@ -11,6 +11,8 @@ $china-doll: #DCCEBE;
 $ancient-marble: #D0CFBB;
 $ski-slope: #E2E5E4;
 
+$otto-brown: rgb(85, 72, 68);
+
 $sidebar-width: 200px;
 $sidebar-padding: 35px;
 
@@ -37,6 +39,27 @@ $sidebar-padding: 35px;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 );
 }
 
+@mixin horiz-gradient($left, $right) {
+	background: $left;
+	background: -moz-linear-gradient(top,  $left 0%, $right 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,$left), color-stop(100%,$right));
+	background: -webkit-linear-gradient(left,  $left 0%,$right 100%);
+	background: -o-linear-gradient(left,  $left 0%,$right 100%);
+	background: -ms-linear-gradient(left,  $left 0%,$right 100%);
+	background: linear-gradient(to right,  $left 0%,$right 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$left', endColorstr='$right',GradientType=1 );
+}
+
+@mixin text-color($bg) {
+	@if lightness($bg) > lightness(#aaaaaa) {
+		color: black !important;
+		@include text-shadow(white, 0, 1px, 0);
+	} @else {
+		color: white !important;
+		@include text-shadow(black, 0, -1px, 0);
+	}
+}
+
 @mixin text-shadow($color, $x, $y, $z) {
 	text-shadow: $color $x $y $z;
 	-o-text-shadow: $color $x $y $z;
@@ -51,5 +74,26 @@ $sidebar-padding: 35px;
 	-moz-box-shadow: $color $x $y $z;
 	-webkit-box-shadow: $color $x $y $z;
 	-ms-box-shadow: $color $x $y $z;
+}
+
+@mixin spread-wrapper() {
+	text-align: justify;
+	-ms-text-justify: distribute-all-lines;
+	text-justify: distribute-all-lines;
+	
+	&:after {
+		content: '';
+		width: 100%;
+		display: inline-block;
+		font-size: 0;
+		line-height: 0;
+	}
+}
+
+@mixin spread-item() {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	vertical-align: top;
 }
 

@@ -1,0 +1,44 @@
+$proj-cat-width: 200px;
+$proj-lbl-color: $raindrop;
+
+#projects {
+	@include spread-wrapper();
+	
+	.project {
+		@include spread-item();
+		margin: .5em;
+		width: $proj-cat-width;
+		height: $proj-cat-width;
+		text-align: center;
+		border: 1px solid $chambourd;
+		position: relative;
+		
+		.proj-lbl-wrap {
+			width: $proj-cat-width;
+			bottom: 1em;
+			left: 0;
+			height: 2.25em;
+			position: absolute;
+			border-top: 2px solid $proj-lbl-color;
+			border-bottom: 2px solid $proj-lbl-color;
+			font-size: 1.1em;
+		}
+			
+		
+		.proj-label {
+			width: $proj-cat-width;
+			bottom: 0.125em;
+			left: 0;
+			position: absolute;
+			
+			@include vertical-gradient($proj-lbl-color, darken($proj-lbl-color, 10%));
+			
+			height: 2em;
+			line-height: 2em;
+			@include text-color($proj-lbl-color);
+			font-weight: bold;
+		}
+	}
+		
+}
+

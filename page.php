@@ -7,10 +7,7 @@
 
 			<article class="post">
 		<header>
-			<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-			<div class="tagline">
-				<?php _e("Posted on"); ?> <?php the_time("l, M. j, Y"); ?> <?php _e("at"); ?> <?php the_time("g:i A"); ?> <?php _e("by"); ?> <?php the_author_posts_link(); ?> <?php edit_post_link('Edit', '&#124; ', ''); ?>
-			</div>
+			<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3><?php edit_post_link('Edit', '&#124; ', ''); ?>
 		</header>
 		
 		<div class="entry">
@@ -19,10 +16,6 @@
 		
 		<footer>
 		<footer>
-			<div class="postmetadata">
-				<div class="label"><?php _e('Categories'); ?></div> <?php the_category(', ') ?> <br />
-				<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
-			</div>
 			
 			<div class="social-counts">
 				<div class="interaction"><?php if (function_exists('sfc_like_button')) echo sfc_like_button(array()); ?></div>

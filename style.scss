@@ -4,18 +4,22 @@ Theme URI: localhost
 Description: WP Theme for our house blog.
 Author: Jeff Hentschel
 Author URI: http://www.softpuppywarmhouse.com/
-Version: 1.0.1
+Version: 1.1.0
 */
 
 @import "k";
 @import "navigation";
+@import "page";
 @import "blog";
 @import "post";
+
 
 body {
 	font-family: Lucida Grande, Helvetica, Arial, sans-serif;
 	@include striped-background($raindrop, $big-chill, 15px);
 	color: black;
+	
+	
 }
 
 #wrapper {
@@ -31,12 +35,29 @@ body {
 	box-shadow: 0 0 10px black;
 	margin-bottom: 0;
 	padding-bottom: 0;
+	padding-top: 0;
+}
+
+header#main {
+	padding: 0;
+	margin: 0;
+	background: $otto-brown;
+	background-image: url('images/bg-dots.png');
+	background-size: 175px;
+	height: 175px;
+}
+
+div#logo {
+	width: 80%;
+	text-align: left;
+	height: 175px;
+	line-height: 17em;
+	@include horiz-gradient($otto-brown, rgba(0, 0, 0, 0));
 }
 
 header {
-	padding: 0;
-	text-align: center;
-	margin-top: -1.5em;
+	padding: 1em 1em 0 1em;
+	
 	
 	#tagline {
 		font-size: .8em;
@@ -105,9 +126,12 @@ $icon-height: 34px;
 	text-align: justify;
 	-ms-text-justify: distribute-all-lines;
 	text-justify: distribute-all-lines;
-
+	padding-bottom: 1em;
 }
 
+#text-5 {
+	text-align: center;
+}
 
 .social-icon {
     width: $icon-height;
