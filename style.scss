@@ -4,7 +4,7 @@ Theme URI: localhost
 Description: WP Theme for our house blog.
 Author: Jeff Hentschel
 Author URI: http://www.softpuppywarmhouse.com/
-Version: 1.1.0
+Version: 1.2.0
 */
 
 @import "k";
@@ -12,6 +12,7 @@ Version: 1.1.0
 @import "page";
 @import "blog";
 @import "post";
+@import "search";
 
 
 body {
@@ -151,3 +152,7 @@ $icon-height: 34px;
 	line-height: 0;
 }
 
+/* Fix for IE browsers */
+a, img {
+    border:0;
+}

@@ -24,8 +24,18 @@ $sidebar-padding: 35px;
 	background: -o-linear-gradient(left,  $color-a 0%,$color-a 50%,$color-b 50%);
 	background: -ms-linear-gradient(left,  $color-a 0%,$color-a 50%,$color-b 50%);
 	background: linear-gradient(to right,  $color-a 0%,$color-a 50%,$color-b 50%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-a', endColorstr='$color-b',GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-a}', endColorstr='#{$color-b}',GradientType=1 );
 	background-size: $width 2px;
+}
+
+@mixin left-gradient($color-a, $stop-a, $color-b, $stop-b) {
+	background: -moz-linear-gradient(left,  $color-a $stop-a, $color-b $stop-b);
+	background: -webkit-gradient(linear, left top, right top, color-stop($stop-a,$color-a), color-stop($stop-b,$color-b));
+	background: -webkit-linear-gradient(left,  $color-a $stop-a,$color-b $stop-b); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  $color-a $stop-a,$color-b $stop-b); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  $color-a $stop-a,$color-b $stop-b); /* IE10+ */
+	background: linear-gradient(to right,  $color-a $stop-a,$color-b $stop-b); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 }
 
 @mixin vertical-gradient($top, $bottom) {
@@ -36,7 +46,7 @@ $sidebar-padding: 35px;
 	background: -o-linear-gradient(top,  $top 0%,$bottom 100%);
 	background: -ms-linear-gradient(top,  $top 0%,$bottom 100%);
 	background: linear-gradient(to bottom,  $top 0%,$bottom 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$top}', endColorstr='#{$bottom}', GradientType=0 );
 }
 
 @mixin horiz-gradient($left, $right) {
@@ -47,7 +57,7 @@ $sidebar-padding: 35px;
 	background: -o-linear-gradient(left,  $left 0%,$right 100%);
 	background: -ms-linear-gradient(left,  $left 0%,$right 100%);
 	background: linear-gradient(to right,  $left 0%,$right 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$left', endColorstr='$right',GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$left}', endColorstr='#{$right}', GradientType=1 );
 }
 
 @mixin text-color($bg) {
@@ -80,6 +90,7 @@ $sidebar-padding: 35px;
 	text-align: justify;
 	-ms-text-justify: distribute-all-lines;
 	text-justify: distribute-all-lines;
+	position: relative;
 	
 	&:after {
 		content: '';

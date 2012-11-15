@@ -108,27 +108,13 @@ article.post {
 		padding-bottom: 0.2em;
 		color: $color-b;
 	}
-	
-	form {
-		width: 100%;
 		
-		#s {
-			width: $sidebar-width - 50px - 15px;
-			border-radius: 5px;
-			padding-left: .5em;
-			height: 1.5em;
-		}
-		
-		#searchsubmit {
-			height: 2em;
-		}
-	}
-	
 	ul {
 		list-style: none;
 		padding: 0;
 	}
 }
+
 
 #blog .social-counts {
 	margin-top: 1em; 
@@ -152,4 +138,33 @@ article.post {
 
 .wp-caption .wp-caption-text {
 	color: black;
+}
+
+/* Before and After Photos */
+$before-after-width: 300px;
+.before-after {
+	@include spread-wrapper();
+	
+	img { width: $before-after-width; }
+	
+	#before, #after {
+		@include spread-item();
+		width: $before-after-width;
+		height: auto;
+		padding: 10px;
+		
+		&:after {
+			position: absolute;
+			font-size: 1.1em;
+			text-align: right;
+			width: $before-after-width;
+			@include left-gradient(rgba(255,255,255,0), 0%, rgba(255,255,255,0), 30%);
+			padding: 5px 10px;
+			margin-top: -2.5em;
+			margin-left: -20px;
+		}
+	}
+	
+	#before:after { content: "Before"; }
+	#after:after { content: "After"; }
 }

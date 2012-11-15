@@ -4,7 +4,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<html xmlns:fb="http://ogp.me/ns/fb#">
 	
-	<title><?php wp_title('|', true, 'right'); ?></title>
+	<title><?php is_front_page() ? bloginfo('name') : wp_title(''); ?></title>
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />

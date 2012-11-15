@@ -1,4 +1,6 @@
-	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search' ); ?>" />
-		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search' ); ?>" />
-	</form>
+<div id='search-box'>
+	<form method="get" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<input type="text" id="search-text" name="s" placeholder="<?php esc_attr_e( 'Search' ); ?>" />
+		<button type="submit" name="submit" id="search-btn"><span><?php esc_attr_e( 'Search' ); ?></span></button>
+  </form>
+</div>

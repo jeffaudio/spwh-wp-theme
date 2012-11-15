@@ -4,7 +4,7 @@ Theme URI: localhost
 Description: WP Theme for our house blog.
 Author: Jeff Hentschel
 Author URI: http://www.softpuppywarmhouse.com/
-Version: 1.1.0
+Version: 1.2.0
 */
 /* Navigation */
 /* Ribbon CSS */
@@ -28,7 +28,7 @@ nav {
   background: -o-linear-gradient(top, #417880 0%, #27484d 100%);
   background: -ms-linear-gradient(top, #417880 0%, #27484d 100%);
   background: linear-gradient(to bottom, #417880 0%, #27484d 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#417880', endColorstr='#27484d', GradientType=0 );
   box-shadow: black 0 1px 1px;
   -o-box-shadow: black 0 1px 1px;
   -moz-box-shadow: black 0 1px 1px;
@@ -106,7 +106,8 @@ nav:after {
 #projects {
   text-align: justify;
   -ms-text-justify: distribute-all-lines;
-  text-justify: distribute-all-lines; }
+  text-justify: distribute-all-lines;
+  position: relative; }
   #projects:after {
     content: '';
     width: 100%;
@@ -145,7 +146,7 @@ nav:after {
       background: -o-linear-gradient(top, #9fc5c8 0%, #7fb1b5 100%);
       background: -ms-linear-gradient(top, #9fc5c8 0%, #7fb1b5 100%);
       background: linear-gradient(to bottom, #9fc5c8 0%, #7fb1b5 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9fc5c8', endColorstr='#7fb1b5', GradientType=0 );
       height: 2em;
       line-height: 2em;
       color: black !important;
@@ -238,15 +239,6 @@ article.post {
     border-bottom: 1px solid #417880;
     padding-bottom: 0.2em;
     color: #417880; }
-  .sidebar form {
-    width: 100%; }
-    .sidebar form #s {
-      width: 135px;
-      border-radius: 5px;
-      padding-left: .5em;
-      height: 1.5em; }
-    .sidebar form #searchsubmit {
-      height: 2em; }
   .sidebar ul {
     list-style: none;
     padding: 0; }
@@ -270,6 +262,53 @@ article.post {
 
 .wp-caption .wp-caption-text {
   color: black; }
+
+/* Before and After Photos */
+.before-after {
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+  position: relative; }
+  .before-after:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0; }
+  .before-after img {
+    width: 300px; }
+  .before-after #before, .before-after #after {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+    width: 300px;
+    height: auto;
+    padding: 10px; }
+    .before-after #before:after, .before-after #after:after {
+      position: absolute;
+      font-size: 1.1em;
+      text-align: right;
+      width: 300px;
+      background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(30%, rgba(255, 255, 255, 0)));
+      background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      /* IE10+ */
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+      /* IE6-9 */
+      padding: 5px 10px;
+      margin-top: -2.5em;
+      margin-left: -20px; }
+  .before-after #before:after {
+    content: "Before"; }
+  .before-after #after:after {
+    content: "After"; }
 
 /* Alignment */
 .alignleft {
@@ -395,6 +434,65 @@ img#wpstats {
     font-size: 0;
     line-height: 0; }
 
+/* Search Form */
+#search-box {
+  position: relative;
+  width: 100%;
+  margin: 0; }
+
+#search-text {
+  font-size: 12px;
+  color: #ddd;
+  border-width: 0;
+  background: transparent; }
+
+#search-box input[type="text"] {
+  width: 90%;
+  padding: 5px 0 12px 1em;
+  color: #333;
+  outline: none; }
+
+#search-form {
+  height: 27px;
+  border: 1px solid #aaa;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 0 5px #bbb;
+  -moz-box-shadow: inset 0 0 5px #bbb;
+  box-shadow: inset 0 0 5px #bbb;
+  overflow: hidden; }
+
+#search-btn {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  height: 27px;
+  width: 60px;
+  font-size: 12px;
+  color: #57474f;
+  text-align: center;
+  border-width: 0;
+  border-left: 1px solid #aaa;
+  -webkit-border-radius: 0px 3px 2px 0px;
+  -moz-border-radius: 0px 3px 2px 0px;
+  border-radius: 0px 3px 2px 0px;
+  background: #c9cd9c;
+  background: -moz-linear-gradient(top, #c9cd9c 0%, #a4ab58 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9cd9c), color-stop(100%, #a4ab58));
+  background: -webkit-linear-gradient(top, #c9cd9c 0%, #a4ab58 100%);
+  background: -o-linear-gradient(top, #c9cd9c 0%, #a4ab58 100%);
+  background: -ms-linear-gradient(top, #c9cd9c 0%, #a4ab58 100%);
+  background: linear-gradient(to bottom, #c9cd9c 0%, #a4ab58 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9cd9c', endColorstr='#a4ab58', GradientType=0 );
+  -webkit-box-shadow: -4px 0px 3px -2px #dddddd;
+  -moz-box-shadow: -4px 0px 3px -2px #dddddd;
+  box-shadow: -4px 0px 3px -2px #dddddd;
+  cursor: pointer;
+  padding-top: 4px; }
+
+/* End Search Form */
 body {
   font-family: Lucida Grande, Helvetica, Arial, sans-serif;
   background: #9fc5c8;
@@ -404,7 +502,7 @@ body {
   background: -o-linear-gradient(left, #9fc5c8 0%, #9fc5c8 50%, #d0cfca 50%);
   background: -ms-linear-gradient(left, #9fc5c8 0%, #9fc5c8 50%, #d0cfca 50%);
   background: linear-gradient(to right, #9fc5c8 0%, #9fc5c8 50%, #d0cfca 50%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color-a', endColorstr='$color-b',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9fc5c8', endColorstr='#d0cfca',GradientType=1 );
   background-size: 15px 2px;
   color: black; }
 
@@ -443,7 +541,7 @@ div#logo {
   background: -o-linear-gradient(left, #554844 0%, rgba(0, 0, 0, 0) 100%);
   background: -ms-linear-gradient(left, #554844 0%, rgba(0, 0, 0, 0) 100%);
   background: linear-gradient(to right, #554844 0%, rgba(0, 0, 0, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$left', endColorstr='$right',GradientType=1 ); }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#554844', endColorstr='rgba(0, 0, 0, 0)', GradientType=1 ); }
 
 header {
   padding: 1em 1em 0 1em; }
@@ -490,7 +588,7 @@ form input[type='submit'] {
   background: -o-linear-gradient(top, #c9cd9c 0%, #dccebe 100%);
   background: -ms-linear-gradient(top, #c9cd9c 0%, #dccebe 100%);
   background: linear-gradient(to bottom, #c9cd9c 0%, #dccebe 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9cd9c', endColorstr='#dccebe', GradientType=0 );
   height: 100%;
   border-radius: 5px;
   border: 1px solid #57474f;
@@ -520,3 +618,7 @@ form input[type='submit'] {
   display: inline-block;
   font-size: 0;
   line-height: 0; }
+
+/* Fix for IE browsers */
+a, img {
+  border: 0; }
