@@ -10,6 +10,7 @@ $oyster-bay: #ACB3A8;
 $china-doll: #DCCEBE;
 $ancient-marble: #D0CFBB;
 $ski-slope: #E2E5E4;
+$snowbound: #EEEBE5;
 
 $otto-brown: rgb(85, 72, 68);
 
@@ -29,12 +30,12 @@ $sidebar-padding: 35px;
 }
 
 @mixin left-gradient($color-a, $stop-a, $color-b, $stop-b) {
-	background: -moz-linear-gradient(left,  $color-a $stop-a, $color-b $stop-b);
-	background: -webkit-gradient(linear, left top, right top, color-stop($stop-a,$color-a), color-stop($stop-b,$color-b));
-	background: -webkit-linear-gradient(left,  $color-a $stop-a,$color-b $stop-b); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  $color-a $stop-a,$color-b $stop-b); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  $color-a $stop-a,$color-b $stop-b); /* IE10+ */
-	background: linear-gradient(to right,  $color-a $stop-a,$color-b $stop-b); /* W3C */
+	background: -moz-linear-gradient(right,  $color-a $stop-a, $color-b $stop-b);
+	background: -webkit-gradient(linear, right top, left top, color-stop($stop-a,$color-a), color-stop($stop-b,$color-b));
+	background: -webkit-linear-gradient(right,  $color-a $stop-a,$color-b $stop-b); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(right,  $color-a $stop-a,$color-b $stop-b); /* Opera 11.10+ */
+	background: -ms-linear-gradient(right,  $color-a $stop-a,$color-b $stop-b); /* IE10+ */
+	background: linear-gradient(to left,  $color-a $stop-a,$color-b $stop-b); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 }
 

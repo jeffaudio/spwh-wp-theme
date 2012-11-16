@@ -4,7 +4,7 @@ Theme URI: localhost
 Description: WP Theme for our house blog.
 Author: Jeff Hentschel
 Author URI: http://www.softpuppywarmhouse.com/
-Version: 1.2.0
+Version: 1.2.1
 */
 /* Navigation */
 /* Ribbon CSS */
@@ -290,21 +290,21 @@ article.post {
       font-size: 1.1em;
       text-align: right;
       width: 300px;
-      background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
-      background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(30%, rgba(255, 255, 255, 0)));
-      background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      background: -moz-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 30%);
+      background: -webkit-gradient(linear, right top, left top, color-stop(0%, white), color-stop(30%, rgba(255, 255, 255, 0)));
+      background: -webkit-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 30%);
       /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      background: -o-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 30%);
       /* Opera 11.10+ */
-      background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      background: -ms-linear-gradient(right, white 0%, rgba(255, 255, 255, 0) 30%);
       /* IE10+ */
-      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%);
+      background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 30%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
       /* IE6-9 */
       padding: 5px 10px;
-      margin-top: -2.5em;
-      margin-left: -20px; }
+      margin-top: 180px;
+      margin-left: -320px; }
   .before-after #before:after {
     content: "Before"; }
   .before-after #after:after {
