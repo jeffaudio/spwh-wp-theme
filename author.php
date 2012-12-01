@@ -3,7 +3,7 @@
 
 
 <div id="blog_container">
-    <div id="blog">
+    <section id="blog">
     
 	<?php if(have_posts()) : ?>
 	
@@ -17,6 +17,11 @@
                  
 	<article class="post">
 		<header>
+			<?php if ( comments_open() ) : echo '<div class="comments">';
+				comments_popup_link( '0', '1', '%', 'comments-link', 'Comments Disabled');
+			echo '</div>';
+				endif;
+			?>
 			<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 			<div class="tagline">
 				<?php _e("Posted on"); ?> <?php the_time("l, M. j, Y"); ?> <?php _e("at"); ?> <?php the_time("g:i A"); ?> <?php _e("by"); ?> <?php the_author_posts_link(); ?> <?php edit_post_link('Edit', '&#124; ', ''); ?>
@@ -32,9 +37,6 @@
 				<div class="label"><?php _e('Categories'); ?></div> <?php the_category(', ') ?> <br />
 				<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
 			</div>
-			<div class="social-counts">
-				<div id="comments-count" class="interaction"><?php comments_popup_link('0 Comments', '1 Comment', '% Comments'); ?></div>
-			</div>
 		</footer>
 	</article>
 	
@@ -45,8 +47,8 @@
  
 <?php endif; ?>
  
-</div>
-</div>
- 
+</section>
 <?php get_sidebar(); ?>   
 <?php get_footer(); ?>
+</div>
+ 

@@ -1,4 +1,4 @@
-<footer>
+<footer class="main">
 	<p>
 		<strong>Copyright &copy; 2012 <?php bloginfo('name'); ?></strong>
 		<br />Jeff & Hillary Hentschel

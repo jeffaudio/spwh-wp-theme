@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div id="blog_container">
-<div id="blog">
+<section id="blog">
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 
@@ -36,8 +36,9 @@
 	</div>
 
 <?php endif; ?>
-</div>
-</div>
-
+</section>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+
+</div>
+

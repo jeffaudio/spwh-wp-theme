@@ -23,6 +23,20 @@ add_theme_support('automatic-feed-links');
 // Enable multisite feature (WP 3.0)
 define('WP_ALLOW_MULTISITE', true);
 
+/* Image Sizes for Blog */
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size('single-image', 390);
+	add_image_size('double-image', 310);
+}
+
+add_filter('image_size_names_choose', 'my_image_sizes');
+function my_image_sizes($sizes) {
+        $customsizes = array(
+                'single-image' => 'Single Image',
+                'double-image' => 'Double Image'
+                );
+        return array_merge($sizes, $customsizes);
+}
 
 
 

@@ -33,6 +33,18 @@
   })();
 
 </script>
+
+	<!--[if lt IE 9]>
+		<script type="text/javascript">
+			document.createElement('nav');
+			document.createElement('header');
+			document.createElement('footer');
+			document.createElement('section');
+			document.createElement('article');
+						
+		</script>
+	<![endif]-->
+
 </head>
 
 <body>
@@ -47,12 +59,8 @@
 
 
 <div id="wrapper">
-	<header id="main">
-		<div id="logo">
-		<a href="<?php echo get_option('home'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/spwh-logo-white.png" /></a>
-		</div>
-<!--		<p id="tagline"><?php bloginfo('description') ?></p> -->
-	</header>
+
+	<header class="main"><a href="/"><img src="<?php bloginfo('template_directory');?>/images/cover960.png" /></a></header>
 	
 	<nav>
 		<div class="nav-banner">
