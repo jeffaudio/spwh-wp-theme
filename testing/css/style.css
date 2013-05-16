@@ -1,0 +1,103 @@
+/*
+Theme Name: SPWH WP Theme
+Theme URI: https://github.com/jeffaudio/spwh-wp-theme
+Description: Wordpress theme for SPWH blog.
+Author: Jeff Hentschel
+Author URI: http://www.softpuppywarmhouse.com/
+Version: 3.0.0a
+*/
+/* line 13, ../sass/_layout.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/background-tile150.gif");
+}
+
+/* line 19, ../sass/_layout.scss */
+div#page {
+  *zoom: 1;
+  max-width: 83em;
+  _width: 83em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  margin-left: 0;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+div#page:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 25, ../sass/_layout.scss */
+header#banner {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  height: 200px;
+  background-image: url("../images/site-header767.jpg");
+  background-repeat: no-repeat;
+}
+
+/* line 33, ../sass/_layout.scss */
+main {
+  width: 83.13253%;
+  float: left;
+  margin-right: 1.20482%;
+  display: inline;
+  padding-top: 1em;
+  background: white;
+  border-radius: 0 5px 5px 0;
+  -webkit-box-shadow: 0 0px 5px 0 black;
+  -moz-box-shadow: 0 0px 5px 0 black;
+  box-shadow: 0 0px 5px 0 black;
+}
+/* line 42, ../sass/_layout.scss */
+main #small-search {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  text-align: center;
+}
+/* line 47, ../sass/_layout.scss */
+main #navigation {
+  width: 18.84058%;
+  float: left;
+  margin-right: 1.44928%;
+  display: inline;
+}
+/* line 51, ../sass/_layout.scss */
+main #blog {
+  width: 79.71014%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+}
+
+/* line 56, ../sass/_layout.scss */
+aside#complementary {
+  width: 15.66265%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+}
+
+/* line 60, ../sass/_layout.scss */
+footer#contentinfo {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  margin-bottom: 2em;
+  border-shadow: 2px 2px black;
+}

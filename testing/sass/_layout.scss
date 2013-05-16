@@ -1,0 +1,65 @@
+@import "susy";
+@import "compass";
+
+$total-columns  : 12;
+$column-width   : 6em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+
+$aside-columns: 2;
+$main-columns: 10;
+$nav-columns: 2;
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/background-tile150.gif");
+}
+
+div#page {
+	@include container;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+header#banner {
+	@include span-columns($total-columns omega);
+	height: 200px;
+
+	background-image: url("../images/site-header767.jpg");
+	background-repeat: no-repeat;
+}
+
+main {
+	@include span-columns($main-columns);
+	padding-top: 1em;
+	
+	background: white;
+	border-radius: 0 5px 5px 0;
+	@include single-box-shadow(black, 0, 0px, 5px, 0);
+	
+	
+	#small-search {
+		@include span-columns($main-columns omega, $main-columns);
+		text-align: center;
+	}
+	
+	#navigation {
+		@include span-columns(2, $main-columns);
+	}
+	
+	#blog {
+		@include span-columns(8 omega, $main-columns);
+	}
+}
+
+aside#complementary {
+	@include span-columns($aside-columns omega);
+}
+
+footer#contentinfo {
+	@include span-columns($total-columns omega);
+	margin-bottom: 2em;
+	border-shadow: 2px 2px black;
+}
+
