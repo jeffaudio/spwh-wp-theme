@@ -6,6 +6,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	background-image: url("../images/background-tile150.gif");
+	background-repeat: repeat;
 }
 
 div#page {
@@ -34,14 +35,14 @@ header#banner {
 }
 
 main {
-	@include span-columns(10);
+	@include span-columns(9);
 	
 	background: white;
 	border-radius: 0 5px 5px 0;
 	box-shadow: 0 0 5px 0 black;
 	
 	@include media($tablet) {
-		@include span-columns(8);
+		@include span-columns(7);
 	}
 	
 	@include media($mobile) {
@@ -60,21 +61,22 @@ main {
 	}
 	
 	#navigation {
-		@include span-columns(2 of 10);
+		@include span-columns(2 of 9);
 		overflow: hidden;
 		padding-left: 1em;
 		
 		@include media($tablet) {
+			@include span-columns(0 of 7);
 			display: none;
 		}
 	}
 	
 	#blog {
-		@include span-columns(8 of 10);
+		@include span-columns(7 of 9);
 		padding-right: 1em;
 		
 		@include media($tablet) {
-			@include span-columns(8 of 8);
+			@include span-columns(7 of 7);
 			padding-left: 1em;
 		}
 		
@@ -85,9 +87,14 @@ main {
 }
 
 aside#complementary {
-	@include span-columns(2);
+	@include span-columns(3);
 	@include omega();
 	overflow: hidden;
+	
+	@include media($tablet) {
+		@include span-columns(3);
+		@include omega();
+	}
 	
 	@include media($mobile) {
 		display: none;
@@ -95,14 +102,18 @@ aside#complementary {
 }
 
 footer#contentinfo {
+	padding-left: 1em;
+	
 	@include span-columns(12);
 	@include omega();
 	
 	@include media($tablet) {
 		@include span-columns(10);
+		@include omega();
 	}
 	
 	@include media($mobile) {
 		@include span-columns(4);
+		@include omega();
 	}
 }
