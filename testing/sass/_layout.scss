@@ -1,14 +1,6 @@
-@import "susy";
-@import "compass";
-
-$total-columns  : 12;
-$column-width   : 6em;
-$gutter-width   : 1em;
-$grid-padding   : $gutter-width;
-
-$aside-columns: 2;
-$main-columns: 10;
-$nav-columns: 2;
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
 
 html, body {
 	margin: 0;
@@ -17,49 +9,100 @@ html, body {
 }
 
 div#page {
-	@include container;
+	@include outer-container;
 	padding-left: 0;
 	margin-left: 0;
 }
 
 header#banner {
-	@include span-columns($total-columns omega);
+	@include span-columns(12);
+	@include omega();
 	height: 200px;
 
 	background-image: url("../images/site-header767.jpg");
 	background-repeat: no-repeat;
+	
+	@include media($tablet) {
+		@include span-columns(10);
+	}
+	
+	@include media($mobile) {
+		@include span-columns(4);
+		background-image: url("../images/site-header479.jpg");
+		height: 128px;
+	}
 }
 
 main {
-	@include span-columns($main-columns);
-	padding-top: 1em;
+	@include span-columns(10);
 	
 	background: white;
 	border-radius: 0 5px 5px 0;
-	@include single-box-shadow(black, 0, 0px, 5px, 0);
+	box-shadow: 0 0 5px 0 black;
 	
+	@include media($tablet) {
+		@include span-columns(8);
+	}
+	
+	@include media($mobile) {
+		@include span-columns(4);
+		border-radius: 0;
+	}
 	
 	#small-search {
-		@include span-columns($main-columns omega, $main-columns);
 		text-align: center;
+		display: none;
+		
+		@include media($mobile) {
+			@include span-columns(4);
+			display: block;
+		}
 	}
 	
 	#navigation {
-		@include span-columns(2, $main-columns);
+		@include span-columns(2 of 10);
+		overflow: hidden;
+		padding-left: 1em;
+		
+		@include media($tablet) {
+			display: none;
+		}
 	}
 	
 	#blog {
-		@include span-columns(8 omega, $main-columns);
+		@include span-columns(8 of 10);
+		padding-right: 1em;
+		
+		@include media($tablet) {
+			@include span-columns(8 of 8);
+			padding-left: 1em;
+		}
+		
+		@include media($mobile) {
+			@include span-columns(4 of 4);
+		}
 	}
 }
 
 aside#complementary {
-	@include span-columns($aside-columns omega);
+	@include span-columns(2);
+	@include omega();
+	overflow: hidden;
+	
+	@include media($mobile) {
+		display: none;
+	}
 }
 
 footer#contentinfo {
-	@include span-columns($total-columns omega);
-	margin-bottom: 2em;
-	border-shadow: 2px 2px black;
+	@include span-columns(12);
+	@include omega();
+	
+	@include media($tablet) {
+		@include span-columns(10);
+	}
+	
+	@include media($mobile) {
+		@include span-columns(4);
+	}
 }
-

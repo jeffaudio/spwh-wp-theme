@@ -1,0 +1,71 @@
+@import "bourbon/bourbon";
+
+$grid-columns: 12;
+$column: 6em;
+$gutter: 1em;
+
+$default-feature: max-width;
+
+
+// Grid Guidance;
+$visual-grid-color: #0099FF;
+$visual-grid-opacity: 0.2;
+$visual-grid-index: front;
+// $visual-grid: true;
+
+@import "neat/neat";
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/background-tile150.gif");
+}
+
+div#page {
+	@include outer-container;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+header#banner {
+	@include span-columns(12);
+	height: 200px;
+
+	background-image: url("../images/site-header767.jpg");
+	background-repeat: no-repeat;
+}
+
+main {
+	@include span-columns(10);
+	
+	background: white;
+	border-radius: 0 5px 5px 0;
+	box-shadow: 0 0 5px 0 black;
+	
+	
+	#small-search {
+		@include span-columns(10 of 10);
+		text-align: center;
+		display: none;
+	}
+	
+	#navigation {
+		@include span-columns(2 of 10);
+		overflow: hidden;
+		padding-left: 1em;
+	}
+	
+	#blog {
+		@include span-columns(8 of 10);
+		padding-right: 1em;
+	}
+}
+
+aside#complementary {
+	@include span-columns(2);
+	@include omega();
+}
+
+footer#contentinfo {
+	@include span-columns(12);
+}
