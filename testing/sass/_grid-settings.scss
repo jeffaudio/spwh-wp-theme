@@ -7,8 +7,9 @@ $gutter: 1em;
 
 // Media Queries
 $default-feature: max-width;
-$tablet: new-breakpoint(max-width 768px 10);
-$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(max-width 900px 10);
+$mobile: new-breakpoint(max-width 600px 4);
+$mobile-sm: new-breakpoint(max-width 480px 4);
 
 // Grid Guidance;
 $visual-grid: false;

@@ -18,19 +18,22 @@ div#page {
 header#banner {
 	@include span-columns(12);
 	@include omega();
-	height: 200px;
+	height: 150px;
 
-	background-image: url("../images/site-header767.jpg");
+	background-image: url("../images/site-header768.jpg");
 	background-repeat: no-repeat;
 	
 	@include media($tablet) {
 		@include span-columns(10);
 	}
 	
+	
 	@include media($mobile) {
 		@include span-columns(4);
-		background-image: url("../images/site-header479.jpg");
-		height: 128px;
+	}
+	
+	@include media($mobile-sm) {
+		background-image: url("../images/site-header480.jpg");
 	}
 }
 
