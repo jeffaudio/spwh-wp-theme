@@ -5,13 +5,17 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
+
 <body>
 <div id="page">
 	<header id="banner" role="banner"></header>
 	
 	<main role="main">
-		<div class="search" id="small-search">
-			Search me when I'm small.
+		<div class="search-container" id="small-search">
+			<form class="search">
+				<input type="text" class="search-text" placeholder="Search" />
+				<button type="submit" class="search-button">Search</button>
+			</form>
 		</div>
 	
 		<nav id="navigation" role="navigation">
@@ -250,9 +254,12 @@
 	</main>
 	
 	<aside id="complementary" role="complementary">
-		<section class="search">
-			Search me when I'm big.
-		</section>
+		<div class="search-container" id="main-search">
+			<form class="search">
+				<input type="text" class="search-text" placeholder="Search" />
+				<button type="submit" class="search-button">Search</button>
+			</form>
+		</div>
 	
 		<section id="social-buttons">
 			F T I P Y R
