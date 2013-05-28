@@ -93,6 +93,7 @@ main {
 aside#complementary {
 	@include span-columns(3);
 	@include omega();
+	@include pad(0 1em 0 0);
 	overflow: hidden;
 	
 	@include media($tablet) {

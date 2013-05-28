@@ -22,7 +22,8 @@ div#small-search {
 }
 
 div#main-search {
-	@include pad(default 1em 1em default);
+	@include pad(0 0 1em 0);
+	width: 100%;
 	
 	form.search input.search-text {
 		width: 60%;
