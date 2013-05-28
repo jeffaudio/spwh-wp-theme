@@ -1,13 +1,23 @@
 // Search Form
 
-$search-box-height: 1.5em;
+$search-box-height: 2em;
 $search-border-radius: 0.35em;
 
 div#small-search {
-	@include pad(1em 1em 1em 1em);
+	font-size: 1.5em;
+	@include pad(0.5em 0.5em 0.5em 0.5em);
 	
-	form.search input.search-text {
-		width: 80%;
+	form.search {
+		font-size: 0.7em;
+		
+		input.search-text {
+			width: 70%;
+			font-size: inherit;
+		}
+		
+		button.search-button {
+			font-size: inherit;
+		}
 	}
 }
 
@@ -43,7 +53,7 @@ div.search-container {
 		button.search-button {
 			float: right;
 			height: 100%;
-			width: 5.5em;
+			width: 4em;
 			margin: 0;
 			padding: 0 1em;
 			border: 0;
