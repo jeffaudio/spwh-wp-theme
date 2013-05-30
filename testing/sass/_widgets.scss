@@ -1,0 +1,11 @@
+/* Widgets and Widget Area */
+
+li.widget {
+	list-style-type: none;
+	
+	
+	div#social {
+		@include box($orient: horizontal, $pack: justify, $align: center);
+	}
+}
+

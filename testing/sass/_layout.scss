@@ -5,7 +5,7 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	background-image: url("../images/background-tile150.gif");
+	@include retina-image("../images/background-tile150", 150px 150px, "gif");
 	background-repeat: repeat;
 }
 
@@ -20,7 +20,7 @@ header#banner {
 	@include omega();
 	height: 150px;
 
-	background-image: url("../images/site-header768.jpg");
+	@include retina-image("../images/site-header768", 768px 150px, "jpg");
 	background-repeat: no-repeat;
 	
 	@include media($tablet) {
@@ -33,7 +33,7 @@ header#banner {
 	}
 	
 	@include media($mobile-sm) {
-		background-image: url("../images/site-header480.jpg");
+		@include retina-image("../images/site-header480", 480px 150px, "jpg");
 	}
 }
 
