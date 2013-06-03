@@ -1,0 +1,39 @@
+/* Navigation Styling */
+
+#navigation {
+	padding-left: 0;
+	
+	/* All navigation Lists */
+	ul {
+		list-style-type: none;
+	}
+
+	/* First Navigation Level */
+	> ul {
+	margin-left: 0;
+	padding-left: 0;
+	
+		/* First Navigation Level Items */
+		> li {
+			border-top: 1px solid $chambourd; 
+			margin-bottom: 1em;
+			padding-left: 1em;
+			font-size: 1.1em;
+			font-weight: 500;
+			
+			&:hover {
+				font-weight: bold;
+				background: $raindrop;
+			}
+			
+			/* All Other Navigation Levels */
+			ul {
+				font-size: 0.9em;
+				font-weight: normal;
+				margin-left: 1em;
+				padding-left: 1em;
+			}
+		}
+	}
+}
+	

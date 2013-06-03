@@ -76,7 +76,7 @@ main {
 	#navigation {
 		@include span-columns($nav-columns of $main-columns);
 		overflow: hidden;
-		padding-left: 1em;
+		//padding-left: 1em;
 		
 		@include media($tablet) {
 			@include span-columns(0 of 7);

@@ -1,0 +1,26 @@
+/* Main Blog and Article Styles */
+
+article header h3 {
+	margin-bottom: 0;
+	border-bottom: 1px solid $chambourd;
+}
+.post-information {
+	p { 
+		
+		display: inline;
+		margin-right: 1em;
+		font-size: 0.85em;
+	}
+	
+	a {
+		text-decoration: none;
+		color: black;
+		
+		&:hover { font-weight: bold; }		
+	}
+}
+
+article > p {
+	font-size: 0.9em;
+}		
+	

@@ -8,13 +8,16 @@ li.widget {
 	.widgettitle {
 		border-bottom: 1px solid $chambourd;
 		color: darken($chambourd, 25%);
+		margin-bottom: 0.5em;
 	}
 	
 	/* Base List-Type Widget */
 	ul {
 		list-style-type: none;
 		margin-left: 0;
+		margin-top: 0;
 		padding-left: 0;
+
 	}
 	
 	/* Widget Links */
@@ -40,7 +43,7 @@ li.widget {
 		
 }
 
-/* Social Follow Button */
+/* Social Follow Buttons */
 div#social {
 	@include box($orient: horizontal, $pack: justify, $align: center);
 		
