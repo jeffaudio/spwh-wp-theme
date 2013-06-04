@@ -1,22 +1,38 @@
 /* Main Blog and Article Styles */
 
 article header h3 {
-	margin-bottom: 0;
+	padding-bottom: 0.25em;
+	margin-bottom: 0.25em;
 	border-bottom: 1px solid $chambourd;
+	font-size: 1.5em;
 }
 .post-information {
-	p { 
-		
+	.post-information-item { 
 		display: inline;
-		margin-right: 1em;
+		margin-right: 2em;
 		font-size: 0.85em;
+		padding-left: 16px;
+		background-repeat: no-repeat;
+		width: 8em;
+		
+		&:before { 
+			content: ""; 
+			margin-right: 1ex; 
+			width: 16px;
+			height: 16px;
+		}
 	}
+	
+	.author { @include retina-image("../images/glyphs/person", 16px 16px); }
+	.date-published { @include retina-image("../images/glyphs/clock", 16px 16px); }
+	.comment-count { @include retina-image("../images/glyphs/bubble", 16px 16px); }
+		
 	
 	a {
 		text-decoration: none;
 		color: black;
 		
-		&:hover { font-weight: bold; }		
+		&:hover { text-decoration: underline; }		
 	}
 }
 
