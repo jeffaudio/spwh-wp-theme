@@ -23,9 +23,9 @@ article header h3 {
 		}
 	}
 	
-	.author { @include retina-image("../images/glyphs/person", 16px 16px); }
-	.date-published { @include retina-image("../images/glyphs/clock", 16px 16px); }
-	.comment-count { @include retina-image("../images/glyphs/bubble", 16px 16px); }
+	.author { @include retina-image("../images/glyphs/ic_user", 16px 16px); }
+	.date-published { @include retina-image("../images/glyphs/ic_calendar", 16px 16px); }
+	.comment-count { @include retina-image("../images/glyphs/ic_chat", 16px 16px); }
 		
 	
 	a {

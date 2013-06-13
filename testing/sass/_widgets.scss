@@ -53,7 +53,6 @@ div#social {
 		background-position: 1px 1px;
 		background-repeat: no-repeat;
 		
-		
 		&.facebook { @include retina-image("../images/social/facebook", 32px 32px); }
 		&.twitter { @include retina-image("../images/social/twitter", 32px 32px); }
 		&.instagram { @include retina-image("../images/social/instagram", 32px 32px); }
