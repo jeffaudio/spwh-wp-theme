@@ -17,6 +17,7 @@ html, body {
 	padding: 0;
 	@include retina-image("../images/background-tile150", 150px 150px, "gif");
 	background-repeat: repeat;
+	overflow-x: hidden;
 }
 
 div#page {
@@ -35,6 +36,7 @@ header#banner {
 	
 	@include media($tablet) {
 		@include span-columns($tablet-columns);
+		@include retina-image("../images/site-header480", 480px 150px, "jpg");
 	}
 	
 	
@@ -42,9 +44,6 @@ header#banner {
 		@include span-columns($mobile-columns);
 	}
 	
-	@include media($mobile-sm) {
-		@include retina-image("../images/site-header480", 480px 150px, "jpg");
-	}
 }
 
 main {
