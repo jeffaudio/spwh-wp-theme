@@ -5,7 +5,12 @@
 	
 	a {
 		text-decoration: none;
-		color: black;
+		color: $chambourd;
+		
+		&:hover { 
+			font-weight: bold;
+			color: black; 
+		}
 	}
 	
 	/* All navigation Lists */
@@ -30,10 +35,11 @@
 				width: auto;
 				display: block;
 				padding-left: 1em;
+				
 			}
 			&:hover {
 				font-weight: bold;
-				background: $raindrop;
+				color: black;
 			}
 			
 			/* All Other Navigation Levels */
