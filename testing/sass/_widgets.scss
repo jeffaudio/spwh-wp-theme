@@ -45,8 +45,8 @@ li.widget {
 
 /* Social Follow Buttons */
 div#social {
-	@include box($orient: horizontal, $pack: justify, $align: center);
-		
+	@include spread-wrapper;
+			
 	img {
 		height: 34px;
 		width: 34px;

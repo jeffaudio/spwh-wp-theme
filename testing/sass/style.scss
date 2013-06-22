@@ -7,10 +7,13 @@ Author URI: http://www.softpuppywarmhouse.com/
 Version: 3.0.0a
 */
 
+@import "mixins";
 @import "colors";
 @import "layout";
+
 @import "text";
 @import "nav";
 @import "search";
 @import "widgets";
 @import "blog";
+@import "projects";

@@ -1,0 +1,57 @@
+/* Jeff's Mixins */
+
+
+@mixin vertical-gradient($top, $bottom) {
+	background-color: $top;
+}
+
+@mixin text-color($bg) {
+	@if lightness($bg) > lightness(#aaaaaa) {
+		color: black !important;
+		@include text-shadow(black);
+	} @else {
+		color: white !important;
+		@include text-shadow(white);
+	}
+}
+@mixin text-shadow($text-color) {
+	$shadow-color: blue;
+	$offset-y: 5px;
+	
+	@if lightness($text-color) > lightness(#aaaaaa) {
+		$shadow-color: black;
+		$offset-y: -1px;
+	} @else {
+		$shadow-color: white;
+		$offset-y: 1px;
+	}
+	
+	text-shadow: 0 $offset-y $shadow-color;
+	-o-text-shadow: 0 $offset-y $shadow-color;
+	-moz-text-shadow: 0 $offset-y $shadow-color;
+	-webkit-text-shadow: 0 $offset-y $shadow-color;
+	-ms-text-shadow: 0 $offset-y $shadow-color 
+}
+
+/* Spread */
+@mixin spread-wrapper() {
+	text-align: justify;
+	-ms-text-justify: distribute-all-lines;
+	text-justify: distribute-all-lines;
+	position: relative;
+	
+	&:after {
+		content: '';
+		width: 100%;
+		display: inline-block;
+		font-size: 0;
+		line-height: 0;
+	}
+	
+	> * {
+		display: inline-block;
+		*display: inline;
+		zoom: 1;
+		vertical-align: top;
+	}
+}
