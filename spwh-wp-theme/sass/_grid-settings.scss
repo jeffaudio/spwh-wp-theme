@@ -1,0 +1,23 @@
+@import "neat/neat-helpers";
+
+// Main Grid Settings
+$grid-columns: 13;
+$column: 6em;
+$gutter: 1em;
+$max-width: 1200px;
+
+// Media Column Settings
+$tablet-columns: 10;
+$mobile-columns: 4;
+
+// Media Queries
+$default-feature: max-width;
+$tablet: new-breakpoint(max-width 900px $tablet-columns);
+$mobile: new-breakpoint(max-width 600px $mobile-columns);
+$mobile-sm: new-breakpoint(max-width 480px $mobile-columns);
+
+// Grid Guidance;
+$visual-grid: false;
+$visual-grid-color: #0099FF;
+$visual-grid-opacity: 0.2;
+$visual-grid-index: front;

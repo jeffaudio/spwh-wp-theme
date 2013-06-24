@@ -1,123 +1,72 @@
-@import "compass/css3/transform";
+/* Main Blog and Article Styles */
 
-$header-color: $grand-canal;
-
-/* Headers */
-#blog header {
-	padding: 0;
-	text-align: left;
-	margin: 0;
-	margin-bottom: 1em;
+article header h3 {
+	padding-bottom: 0.25em;
+	margin-bottom: 0.25em;
+	border-bottom: 1px solid $chambourd;
+	font-size: 1.5em;
 }
 
-h3.title { font-size: 1.5em; }
-.sidebar h2 { font-size: 1.25em; }
-
-h3.title, .sidebar h2 {
-	border-bottom: 1px solid $header-color;
-	color: $grand-canal;	
-	padding-bottom: 5px;
-	margin: 0;
-	font-weight: bold;
-	line-height: 1em;
-	margin-bottom: 5px;
-}
-
-h3.title a {
-	@include link($header-color);
-}
-
-.page-header h1 {
-	font-size: 2em;
-	font-weight: bold;
-}
-
-/* Post Tagline */
-.tagline a {
-	font-style: italic;
-	@include link($header-color);
-}
-
-/* Tags and Categories */
-.postmetadata {
-	a {
-		font-style: italic;
-		@include link($header-color );
-	}
-}
-
-#blog .label {
-	display: inline;
-	color: black;
-	font-weight: bold;
-}
-article.post {
-	margin-bottom: 30px;
-	
-	.entry {
-		a {
-			@include link;
-			text-decoration: underline;
-			
-			&:hover { font-weight: normal; }
+.post-information {
+	.post-information-item { 
+		display: inline;
+		margin-right: 2em;
+		font-size: 0.85em;
+		
+		&:before { 
+			font-family: entypo;
+			margin-right: 0.15em;
+			font-size: 2.5em;
+			line-height: 0.75em;
+			color: #333;
 		}
 		
-		a.more-link {
-			text-decoration: none;
-			font-style: italic;
+		@include media($tablet) {
+			display: block;
 		}
 	}
-}
-
-
-/* Comments */
-.comments:after{
-    content: '';
-    background: #fff;
-    height: 8px; width: 8px;
-    position: absolute;
-    bottom: -4px; left: 50%;
-    z-index: 4;
-    @include rotate(45deg);
-    box-shadow: 1px 1px 0px black;
-}
-
-.comments {
-    background: #fff;
-    border: 1px solid black;
-    position: relative;
-    margin: 0;
-    padding: 3px;
-    height: 1em;
-    text-align: center;
-    line-height: 1em;
-    float: right;
-    
-    a {
-    	@include link($header-color);
-    }
-}
-
-#comments-count {
-	line-height: 9px;
-	border: 1px solid black;
-	padding: 5px 7px;
-	margin: 0;
-	height: 9px; 
-	border-radius: 3px;
-	float: right;
+	
+	.author:before { content: "\1F464"; }
+	.date-published:before { content: "\1F4C5"; }
+	.comment-count:before { content: "\E720"; }
+		
 	
 	a {
-		@include link($header-color);
+		text-decoration: none;
+		color: black;
+		
+		&:hover { text-decoration: underline; }		
 	}
 }
 
-/* Sidebar */
-.sidebar a {
-	@include link;
+article > p {
+	font-size: 0.9em;
 }
 
-.sidebar ul {
-	list-style: none;
-	padding: 0;
+article img {
+	width: 100%;
+	height: auto;
+}
+
+
+$metadatacolor: $grand-canal;
+.postmetadata {
+	font-size: 0.85em;
+	color: $metadatacolor;
+	
+	.label {
+		font-weight: 600;
+		display: inline;
+	}
+	
+	a {
+		font-style: italic;
+		text-decoration: none;
+		color: $metadatacolor;
+		
+		&:hover {
+			color: black;
+			text-decoration: underline;
+		}
+	}
 }

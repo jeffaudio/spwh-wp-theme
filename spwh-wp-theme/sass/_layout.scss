@@ -1,77 +1,133 @@
-@import "compass/typography/lists/horizontal-list";
-@import "compass/layout/stretching";
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
 
-$sidebar-columns: 6;
-$border-columns: 1;
 
-html {
-	margin-top: 0;
-}
+$nav-columns: 2;
+$aside-columns: 3;
 
-body {
-	@include striped-background($raindrop, $big-chill, 10px);
-}
+$main-columns: $grid-columns - $aside-columns;
+$blog-columns: $main-columns - $nav-columns;
 
-#wrapper {
-	@include container;
-	
-	background: white;
-	overflow: visible;
-	box-shadow: 0 0 10px black;
-	
-	//@include showgrid;
-}
+$tablet-main-columns: $tablet-columns - $aside-columns;
 
-header.main {
-	height: 175px;
-}
 
-header.main, footer.main {
-	@include column($blueprint-grid-columns);
-	text-align: center;
+html, body {
+	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	@include retina-image("images/background-tile150", 150px 150px, "gif");
+	background-repeat: repeat;
+	overflow-x: hidden;
+}
+
+div#page {
+	@include outer-container;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+header#banner {
+	@include span-columns($grid-columns);
+	@include omega();
+	height: 150px;
+
+	@include retina-image("images/site-header768", 768px 150px, "jpg");
+	background-repeat: no-repeat;
+	
+	@include media($tablet) {
+		@include span-columns($tablet-columns);
+		@include retina-image("images/site-header480", 480px 150px, "jpg");
+	}
+	
+	
+	@include media($mobile) {
+		@include span-columns($mobile-columns);
+	}
+	
+}
+
+main {
+	@include span-columns($main-columns);
+	
 	background: white;
-
-}
-
-footer.main {
-	background: $big-chill;
-	padding-top: 1em;
-	margin-top: 1em;
-}
-
-#blog_container {
-	@include container;
-	padding-top: 10px;
-}
-
-#blog {
-	@include column($blueprint-grid-columns - $sidebar-columns - (2 * $border-columns));
-	@include prepend($border-columns);
-}
-
-.sidebar {
-	@include column($sidebar-columns, true);
+	border-radius: 0 5px 5px 0;
+	box-shadow: 0 0 5px 0 black;
 	
-	li.widget {
-		margin-bottom: 10px;
+	@include media($tablet) {
+		@include span-columns($tablet-main-columns);
+	}
+	
+	@include media($mobile) {
+		@include span-columns($mobile-columns);
+		border-radius: 0;
+	}
+	
+	#small-search {
+		text-align: center;
+		display: none;
+		
+		@include media($mobile) {
+			@include span-columns($mobile-columns);
+			display: block;
+		}
+	}
+	
+	#navigation {
+		@include span-columns($nav-columns of $main-columns);
+		overflow: hidden;
+		//padding-left: 1em;
+		
+		@include media($tablet) {
+			@include span-columns(0 of 7);
+			display: none;
+		}
+	}
+	
+	#blog {
+		@include span-columns($blog-columns of $main-columns);
+		padding-right: 1em;
+		padding-bottom: 1em;
+		
+		@include media($tablet) {
+			@include span-columns($tablet-main-columns of $tablet-main-columns);
+			padding-left: 1em;
+		}
+		
+		@include media($mobile) {
+			@include span-columns($mobile-columns of $mobile-columns);
+		}
 	}
 }
 
-
-
-#social {
-	@include spread-wrapper;
-	height: 34px;
+aside#complementary {
+	@include span-columns($aside-columns);
+	@include omega();
+	@include pad(0 1em 0 0);
+	overflow: hidden;
 	
-	.social-icon {
-		@include spread-item;
+	@include media($tablet) {
+		@include span-columns($aside-columns);
+		@include omega();
+	}
+	
+	@include media($mobile) {
+		display: none;
 	}
 }
 
-.sidebar {
-	list-style: none;
+footer#contentinfo {
+	padding-left: 1em;
 	
-	.textwidget { text-align: center; }
+	@include span-columns($grid-columns);
+	@include omega();
+	
+	@include media($tablet) {
+		@include span-columns($tablet-columns);
+		@include omega();
+	}
+	
+	@include media($mobile) {
+		@include span-columns($mobile-columns);
+		@include omega();
+	}
 }
