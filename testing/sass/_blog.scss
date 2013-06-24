@@ -6,6 +6,7 @@ article header h3 {
 	border-bottom: 1px solid $chambourd;
 	font-size: 1.5em;
 }
+
 .post-information {
 	.post-information-item { 
 		display: inline;
@@ -27,7 +28,7 @@ article header h3 {
 	
 	.author:before { content: "\1F464"; }
 	.date-published:before { content: "\1F4C5"; }
-	.comment-count:before { content: ""; }
+	.comment-count:before { content: "\E720"; }
 		
 	
 	a {
@@ -46,4 +47,26 @@ article img {
 	width: 100%;
 	height: auto;
 }
+
+
+$metadatacolor: $grand-canal;
+.postmetadata {
+	font-size: 0.85em;
+	color: $metadatacolor;
 	
+	.label {
+		font-weight: 600;
+		display: inline;
+	}
+	
+	a {
+		font-style: italic;
+		text-decoration: none;
+		color: $metadatacolor;
+		
+		&:hover {
+			color: black;
+			text-decoration: underline;
+		}
+	}
+}
