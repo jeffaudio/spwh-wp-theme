@@ -27,6 +27,7 @@
 	<footer>
 		<div class="postmetadata">
 			<div class="label"><?php _e('Categories'); ?></div> <?php the_category(', ') ?>
+			<br>
 			<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
 		</div>
 	</footer>

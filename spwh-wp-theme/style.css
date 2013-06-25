@@ -4,7 +4,7 @@ Theme URI: https://github.com/jeffaudio/spwh-wp-theme
 Description: Wordpress theme for SPWH blog.
 Author: Jeff Hentschel
 Author URI: http://www.softpuppywarmhouse.com/
-Version: 3.0.1a
+Version: 3.0.0a
 */
 /* Jeff's Mixins */
 /* Spread */
@@ -220,6 +220,10 @@ footer#contentinfo {
 h1, h2, h3, h4, h5, h6 {
   font-family: merriweather, serif;
   font-weight: bold; }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    text-decoration: none; }
+    h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+      font-weight: bold; }
 
 h1 {
   font-size: 1.3em; }
@@ -293,14 +297,14 @@ div#main-search {
   div#main-search form.search input.search-text {
     width: 60%; }
 
-div.search-container form.search {
+.widget_search form.search {
   background-color: white;
   border: 1px solid black;
   border-radius: 0.35em;
   height: 2em;
   box-shadow: inset 0 0 0.25em #BBB;
   overflow: hidden; }
-  div.search-container form.search input.search-text {
+  .widget_search form.search input.search-text {
     float: left;
     height: 100%;
     padding: 0 1em;
@@ -309,7 +313,7 @@ div.search-container form.search {
     background: transparent;
     color: #57474f;
     outline: none; }
-  div.search-container form.search button.search-button {
+  .widget_search form.search button.search-button {
     float: right;
     height: 100%;
     width: 4em;
@@ -325,12 +329,12 @@ div.search-container form.search {
     background-image: linear-gradient(#c9cd9c, #a4ab58);
     box-shadow: -4px 0px 3px -2px #dddddd;
     cursor: pointer; }
-    div.search-container form.search button.search-button:hover {
+    .widget_search form.search button.search-button:hover {
       background-color: #d2d6ad;
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d2d6ad), color-stop(100%, #adb369));
       background-image: -webkit-linear-gradient(#d2d6ad, #adb369);
       background-image: linear-gradient(#d2d6ad, #adb369); }
-    div.search-container form.search button.search-button:active {
+    .widget_search form.search button.search-button:active {
       background-color: #a4ab58;
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a4ab58), color-stop(100%, #c9cd9c));
       background-image: -webkit-linear-gradient(#a4ab58, #c9cd9c);
@@ -427,6 +431,8 @@ article header h3 {
   margin-bottom: 0.25em;
   border-bottom: 1px solid #57474f;
   font-size: 1.5em; }
+  article header h3 a {
+    color: #57474f; }
 
 .post-information .post-information-item {
   display: inline;
@@ -437,7 +443,8 @@ article header h3 {
     margin-right: 0.15em;
     font-size: 2.5em;
     line-height: 0.75em;
-    color: #333; }
+    color: #333;
+    vertical-align: bottom; }
   @media screen and (max-width: 900px) {
     .post-information .post-information-item {
       display: block; } }

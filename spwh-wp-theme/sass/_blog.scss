@@ -5,6 +5,7 @@ article header h3 {
 	margin-bottom: 0.25em;
 	border-bottom: 1px solid $chambourd;
 	font-size: 1.5em;
+	a { color: $chambourd; }
 }
 
 .post-information {
@@ -19,6 +20,7 @@ article header h3 {
 			font-size: 2.5em;
 			line-height: 0.75em;
 			color: #333;
+			vertical-align: bottom;
 		}
 		
 		@include media($tablet) {

@@ -67,7 +67,7 @@
 	<header id="banner" role="banner"></header>
 	
 	<main role="main">
-		<div class="search-container" id="small-search">
+		<div class="widget_search" id="small-search">
 			<?php get_search_form( $echo ); ?>
 		</div>
 		
