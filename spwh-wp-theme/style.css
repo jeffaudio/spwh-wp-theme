@@ -217,6 +217,9 @@ footer#contentinfo {
   font-weight: normal;
   font-style: normal; }
 
+.page-header {
+  text-transform: capitalize; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: merriweather, serif;
   font-weight: bold; }
@@ -434,6 +437,13 @@ article header h3 {
   article header h3 a {
     color: #57474f; }
 
+.more-link {
+  color: #417880;
+  text-decoration: none;
+  font-style: italic; }
+  .more-link:hover {
+    font-weight: bold; }
+
 .post-information .post-information-item {
   display: inline;
   margin-right: 2em;
@@ -454,6 +464,8 @@ article header h3 {
   content: "\1F4C5"; }
 .post-information .comment-count:before {
   content: "\E720"; }
+.post-information .edit:before {
+  content: '\270E'; }
 .post-information a {
   text-decoration: none;
   color: black; }
@@ -467,6 +479,7 @@ article img {
   width: 100%;
   height: auto; }
 
+/* Post Metadata (Categories, Tags, Social) */
 .postmetadata {
   font-size: 0.85em;
   color: #417880; }
@@ -480,6 +493,19 @@ article img {
     .postmetadata a:hover {
       color: black;
       text-decoration: underline; }
+
+/* Bottom Page Navigation */
+.navigation #previous {
+  text-align: left;
+  display: inline; }
+.navigation #next {
+  float: right;
+  display: inline; }
+.navigation a {
+  color: #57474f;
+  text-decoration: none; }
+  .navigation a:hover {
+    font-weight: bold; }
 
 #projects {
   text-align: justify;

@@ -1,54 +1,51 @@
 <?php get_header(); ?>
 
-
-
-<div id="blog_container">
-    <section id="blog">
+<section id="blog">
     
-	<?php if(have_posts()) : ?>
-	
-		<header class="page-header">
-			<?php the_post(); ?>
-	        <h1>Posts by <?php the_author(); ?></h1>
-	        <?php rewind_posts(); ?>
-		</header>
+<?php if(have_posts()) : ?>	
+<header class="page-header">
+  <?php the_post(); ?>
+  <h1>Posts by <?php the_author(); ?></h1>
+  <?php rewind_posts(); ?>
+</header>
         
-	<?php while(have_posts()) : the_post(); ?>
-                 
-	<article class="post">
-		<header>
-			<?php if ( comments_open() ) : echo '<div class="comments">';
+<?php while(have_posts()) : the_post(); ?>
+<article class="post">
+	<header>
+		<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			
+		<div class="post-information">
+			<div class="post-information-item date-published"><?php the_time("l, M. j, Y"); ?></div>
+			<div class="post-information-item author"><?php the_author_posts_link(); ?></div>
+			
+			<?php if ( comments_open() ) : echo '<div class="post-information-item comment-count">';
 				comments_popup_link( '0', '1', '%', 'comments-link', 'Comments Disabled');
 			echo '</div>';
 				endif;
 			?>
-			<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-			<div class="tagline">
-				<?php _e("Posted on"); ?> <?php the_time("l, M. j, Y"); ?> <?php _e("at"); ?> <?php the_time("g:i A"); ?> <?php _e("by"); ?> <?php the_author_posts_link(); ?> <?php edit_post_link('Edit', '&#124; ', ''); ?>
-			</div>
-		</header>
-		
-		<div class="entry">
-			<?php the_content('Continue Reading...'); ?>
+			
+			<div class="post-information-item edit"><?php edit_post_link('Edit', '', ''); ?></div>
 		</div>
-		
-		<footer>
-			<div class="postmetadata">
-				<div class="label"><?php _e('Categories'); ?></div> <?php the_category(', ') ?> <br />
-				<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
-			</div>
-		</footer>
-	</article>
+	</header>
 	
-	<?php endwhile; ?> 
-    <div class="navigation">
-        <?php posts_nav_link(); ?>
-    </div>
- 
-<?php endif; ?>
- 
-</section>
-<?php get_sidebar(); ?>   
-<?php get_footer(); ?>
+	<?php the_content('Continue Reading...'); ?>
+				
+	<footer>
+		<div class="postmetadata">
+			<div class="label"><?php _e('Categories'); ?></div> <?php the_category(', ') ?>
+			<br>
+			<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
+		</div>
+	</footer>
+</article>
+<?php endwhile; ?>
+	 
+<div class="navigation">
+	<div id="previous"><? previous_posts_link(); ?></div>
+	<div id="next"><? next_posts_link(); ?></div>
 </div>
- 
+
+<?php endif; ?>
+</section>
+
+<?php get_footer(); ?> 

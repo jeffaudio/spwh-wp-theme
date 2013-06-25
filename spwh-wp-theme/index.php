@@ -2,8 +2,8 @@
 
 <section id="blog">
 <?php if(have_posts()) : ?>
-<?php while(have_posts()) : the_post(); ?>
-                
+
+<?php while(have_posts()) : the_post(); ?>                
 <article class="post">
 	<header>
 		<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -18,7 +18,7 @@
 				endif;
 			?>
 			
-			<div class="post-information-item edit"><?php edit_post_link('Edit', '&#124; ', ''); ?></div>
+			<div class="post-information-item edit"><?php edit_post_link('Edit', '', ''); ?></div>
 		</div>
 	</header>
 	
@@ -32,8 +32,13 @@
 		</div>
 	</footer>
 </article>
-			
 <?php endwhile; ?> 
+
+<div class="navigation">
+	<div id="previous"><? previous_posts_link(); ?></div>
+	<div id="next"><? next_posts_link(); ?></div>
+</div>
+
 <?php endif; ?>
 </section>
 

@@ -12,7 +12,11 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
 	
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?> />
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.10.1.min.js"></script>
+		
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/youtube-resize.js"></script>
 	
 	<?php
 		// This is to support sites with threaded comments.

@@ -1,44 +1,45 @@
 <?php get_header(); ?>
 
-<div id="blog_container">
 <section id="blog">
 <?php if (have_posts()) : ?>
-	<?php while (have_posts()) : the_post(); ?>
 
-			<article class="post">
-		<header>
-			<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3><?php edit_post_link('Edit', '&#124; ', ''); ?>
-		</header>
-		
-		<div class="entry">
-			<?php the_content(); ?>
+<?php while(have_posts()) : the_post(); ?>
+<article class="post">
+	<header>
+		<h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			
+		<div class="post-information">
+			<div class="post-information-item date-published"><?php the_time("l, M. j, Y"); ?></div>
+			<div class="post-information-item author"><?php the_author_posts_link(); ?></div>
+			
+			<?php if ( comments_open() ) : echo '<div class="post-information-item comment-count">';
+				comments_popup_link( '0', '1', '%', 'comments-link', 'Comments Disabled');
+			echo '</div>';
+				endif;
+			?>
+			
+			<div class="post-information-item edit"><?php edit_post_link('Edit', '', ''); ?></div>
 		</div>
-		
-		<footer>
-		<footer>
-			
-			<div class="social-counts">
-				<div class="interaction"><?php if (function_exists('sfc_like_button')) echo sfc_like_button(array()); ?></div>
-				<div class="interaction">
-			
-					<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" data-via="jeffandhillary">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				</div>
-			</div>
-
-			
-		</footer>
-	</article>
-	<?php endwhile; ?>
+	</header>
 	
-	<div class="navigation">
-		<?php posts_nav_link(); ?>
-	</div>
+	<?php the_content('Continue Reading...'); ?>
+				
+	<footer>
+		<div class="postmetadata">
+			<div class="label"><?php _e('Categories'); ?></div> <?php the_category(', ') ?>
+			<br>
+			<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
+		</div>
+	</footer>
+</article>
+<?php endwhile; ?>
+	 
+<div class="navigation">
+	<div id="previous"><? previous_posts_link(); ?></div>
+	<div id="next"><? next_posts_link(); ?></div>
+</div>
 
 <?php endif; ?>
 </section>
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
-
-</div>
-

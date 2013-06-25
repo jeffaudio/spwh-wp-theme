@@ -8,6 +8,13 @@ article header h3 {
 	a { color: $chambourd; }
 }
 
+.more-link {
+  color: $grand-canal;
+  text-decoration: none;
+  font-style: italic;
+  &:hover { font-weight: bold; }
+}
+
 .post-information {
 	.post-information-item { 
 		display: inline;
@@ -31,7 +38,7 @@ article header h3 {
 	.author:before { content: "\1F464"; }
 	.date-published:before { content: "\1F4C5"; }
 	.comment-count:before { content: "\E720"; }
-		
+	.edit:before { content: '\270E'; }
 	
 	a {
 		text-decoration: none;
@@ -50,7 +57,7 @@ article img {
 	height: auto;
 }
 
-
+/* Post Metadata (Categories, Tags, Social) */
 $metadatacolor: $grand-canal;
 .postmetadata {
 	font-size: 0.85em;
@@ -70,5 +77,24 @@ $metadatacolor: $grand-canal;
 			color: black;
 			text-decoration: underline;
 		}
+	}
+}
+
+/* Bottom Page Navigation */
+.navigation {
+	#previous { 
+		text-align: left;
+		display: inline;
+	}
+	
+	#next { 
+		float: right;
+		display: inline;
+	}
+	
+	a {
+		color: $chambourd;
+		text-decoration: none;
+		&:hover { font-weight: bold; }
 	}
 }
