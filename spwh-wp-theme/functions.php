@@ -25,15 +25,23 @@ define('WP_ALLOW_MULTISITE', true);
 
 /* Image Sizes for Blog */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size('single-image', 390);
-	add_image_size('double-image', 310);
+	add_image_size('desktop', 720);
+	add_image_size('desktop-retina', 1440);
+	add_image_size('tablet', 600);
+	add_image_size('tablet-retina', 1200);
+	add_image_size('mobile', 480);
+	add_image_size('moble-retina', 960);
 }
 
 add_filter('image_size_names_choose', 'my_image_sizes');
 function my_image_sizes($sizes) {
         $customsizes = array(
-                'single-image' => 'Single Image',
-                'double-image' => 'Double Image'
+                'desktop' => 'Large Image',
+                'desktop-retina' => 'Large Retina Image',
+                'tablet' => 'Medium Image',
+                'tablet-retina' => 'Medium Retina Image',
+                'mobile' => 'Small Image',
+                'mobile-retina' => 'Small Image'
                 );
         return array_merge($sizes, $customsizes);
 }
