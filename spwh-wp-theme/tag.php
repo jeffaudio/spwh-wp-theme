@@ -23,8 +23,12 @@
 				endif;
 			?>
 			
-			<div class="post-information-item edit"><?php edit_post_link('Edit', '', ''); ?></div>
-		</div>
+
+			<?php if (current_user_can( 'manage_options' )) : echo '<div class="post-information-item edit">';
+			  edit_post_link('Edit', '', '');
+			  echo '</div>';
+			  endif;
+			?>		</div>
 	</header>
 	
 	<?php the_content('Continue Reading...'); ?>

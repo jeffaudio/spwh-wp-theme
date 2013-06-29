@@ -68,7 +68,7 @@
 
 
 <div id="page">
-	<header id="banner" role="banner"></header>
+	<a href="/"><header id="banner" role="banner"></header></a>
 	
 	<main role="main">
 		<div class="widget_search" id="small-search">
