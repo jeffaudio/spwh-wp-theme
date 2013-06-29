@@ -450,7 +450,7 @@ article img {
     margin-bottom: 1em; }
 .double-images img {
   width: 100%;
-  display: block; }
+  height: auto; }
 @media screen and (min-width: 700px) {
   .double-images a:first-child {
     margin-right: 4%; }
@@ -458,8 +458,7 @@ article img {
       margin-bottom: 0; }
   .double-images img {
     width: 48%;
-    height: auto;
-    display: inline; } }
+    height: auto; } }
 
 /* Post Information (Author, Date, etc.) */
 .post-information .post-information-item {

@@ -24,7 +24,7 @@ article img {
     }
     img {
       width: 100%;
-      display: block;
+      height: auto;
   }
     
   @include media(700px) {
@@ -35,7 +35,6 @@ article img {
     img {
       width: 48%;
       height: auto;
-      display: inline;
     }
   }  
 }
