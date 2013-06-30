@@ -437,9 +437,13 @@ article header h3 {
   article header h3 a {
     color: #57474f; }
 
+article footer {
+  margin-bottom: 1em; }
+
 article > p {
   font-size: 0.9em; }
 
+/* Image Settings */
 article img {
   width: 100%;
   height: auto; }
