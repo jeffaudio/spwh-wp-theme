@@ -11,6 +11,9 @@ $blog-columns: $main-columns - $nav-columns;
 
 $tablet-main-columns: $tablet-columns - $aside-columns;
 
+img {
+  border: 0;
+}
 
 html, body {
 	margin: 0;
