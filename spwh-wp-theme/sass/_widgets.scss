@@ -47,11 +47,12 @@ li.widget {
 div#social {
 	@include spread-wrapper;
 			
-	img {
-		height: 34px;
-		width: 34px;
-		background-position: 1px 1px;
+	.social-icon {
+		height: 32px;
+		width: 32px;
+		background-position: 0 0;
 		background-repeat: no-repeat;
+		margin-bottom: 0.5em;
 		
 		&.facebook { @include retina-image("images/social/facebook", 32px 32px); }
 		&.twitter { @include retina-image("images/social/twitter", 32px 32px); }
