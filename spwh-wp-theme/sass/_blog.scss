@@ -1,25 +1,32 @@
 /* Main Blog and Article Styles */
-article header h3 {
-	padding-bottom: 0.25em;
-	margin-bottom: 0.25em;
-	border-bottom: 1px solid $chambourd;
-	font-size: 1.5em;
-	a { color: $chambourd; }
-}
-
-article footer { 
-  margin-bottom: 1em;
+article {
+  header h3 {
+	  padding-bottom: 0.25em;
+	  margin-bottom: 0.25em;
+	  border-bottom: 1px solid $chambourd;
+	  font-size: 1.5em;
+	  a { color: $chambourd; }
+  }
+  
+  footer { 
+    margin-bottom: 1em;
+  }
+  
+  img {
+	  width: 100%;
+	  height: auto;
+  }
+  
+  iframe {
+    margin-top: 1em;
+  }
+  
 }
 
 article > p {
 	font-size: 0.9em;
 }
 
-/* Image Settings */
-article img {
-	width: 100%;
-	height: auto;
-}
 
 .double-images {
   a:first-child { 
