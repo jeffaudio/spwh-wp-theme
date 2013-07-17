@@ -41,16 +41,28 @@
 		})();
 	</script>
 
-	<!--[if lt IE 9]>
-		<script type="text/javascript">
-			document.createElement('nav');
-			document.createElement('header');
-			document.createElement('footer');
-			document.createElement('section');
-			document.createElement('article');
-						
-		</script>
-	<![endif]-->
+
+<script> 
+// Load ie.css for IE browsers including IE 10, which doesn't 
+// support conditional statements anymore.
+if (/*@cc_on!@*/false) {
+  var headHTML = document.getElementsByTagName('head')[0].innerHTML;
+  headHTML += '<link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie.css">';
+  document.getElementsByTagName('head')[0].innerHTML = headHTML; 
+} 
+</script>
+
+<!--[if lt IE 9]>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/selectivizr-min.js"></script>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/css3-mediaqueries.js"></script>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/html5shiv.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie8.css"  />
+<![endif]-->
+
+
+
+
 
 		<script src=http://use.edgefonts.net/source-sans-pro;merriweather.js></script>
 

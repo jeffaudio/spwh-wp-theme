@@ -1,0 +1,9 @@
+/* Make the icons appear correctly in IE */
+.post-information	.post-information-item:before { 	
+	vertical-align: baseline;
+}
+
+article header h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
