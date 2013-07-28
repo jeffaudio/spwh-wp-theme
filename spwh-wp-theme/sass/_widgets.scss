@@ -63,8 +63,8 @@ div#social {
 
 		@include hidpi(1.5) {
 			background-image: url(images/social/social_sprites@2x.png);
-			height: 64px;
-			width: 64px;
+			height: 32px;
+			width: 32px;
 
 			&.facebook { background-position: -1px -1px; }
 			&.twitter { background-position: -133px -1px; }
