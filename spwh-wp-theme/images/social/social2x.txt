@@ -7,35 +7,35 @@
 .sprite-facebook_2x {
     width: 64px;
     height: 64px;
-    background-position: -1px -1px;
+    background-position: -2px -2px;
 }
 
 .sprite-instagram_2x {
     width: 64px;
     height: 64px;
-    background-position: -67px -1px;
+    background-position: -70px -2px;
 }
 
 .sprite-pinterest_2x {
     width: 64px;
     height: 64px;
-    background-position: -1px -67px;
+    background-position: -2px -70px;
 }
 
 .sprite-rss_2x {
     width: 64px;
     height: 64px;
-    background-position: -67px -67px;
+    background-position: -70px -70px;
 }
 
 .sprite-twitter_2x {
     width: 64px;
     height: 64px;
-    background-position: -133px -1px;
+    background-position: -138px -2px;
 }
 
 .sprite-youtube_2x {
     width: 64px;
     height: 64px;
-    background-position: -133px -67px;
+    background-position: -138px -70px;
 }
