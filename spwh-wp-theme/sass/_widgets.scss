@@ -48,18 +48,32 @@ div#social {
 	@include spread-wrapper;
 			
 	.social-icon {
+		background-image: url(images/social/social_sprites.png);
 		height: 32px;
 		width: 32px;
-		background-position: 0 0;
 		background-repeat: no-repeat;
 		margin-bottom: 0.5em;
-		
-		&.facebook { @include retina-image("images/social/facebook", 32px 32px); }
-		&.twitter { @include retina-image("images/social/twitter", 32px 32px); }
-		&.instagram { @include retina-image("images/social/instagram", 32px 32px); }
-		&.youtube { @include retina-image("images/social/youtube", 32px 32px); }
-		&.pinterest { @include retina-image("images/social/pinterest", 32px 32px); }
-		&.rss { @include retina-image("images/social/rss", 32px 32px); }
+	
+		&.facebook { background-position: -1px -1px; }
+		&.twitter { background-position: -69px -1px; }
+		&.instagram { background-position: -35px -1px; }
+		&.youtube { background-position: -69px -35px; }
+		&.pinterest { background-position: -1px -35px; }
+		&.rss { background-position: -35px -35px; }
+
+		@include hidpi(1.5) {
+			background-image: url(images/social/social_sprites@2x.png);
+			height: 64px;
+			width: 64px;
+
+			&.facebook { background-position: -1px -1px; }
+			&.twitter { background-position: -133px -1px; }
+			&.instagram { background-position: -67px -1px; }
+			&.youtube { background-position: -133px -67px; }
+			&.pinterest { background-position: -1px -67px; }
+			&.rss { background-position: -67px -67px; }
+		}
+
 	}
 }
 
