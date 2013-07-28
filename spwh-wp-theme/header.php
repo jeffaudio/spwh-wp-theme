@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> manifest="<?php bloginfo('stylesheet_directory'); ?>/spwh.appcache">
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no" />
-	
-	
-	<html xmlns:fb="http://ogp.me/ns/fb#">
+
 	
 	<title><?php is_front_page() ? bloginfo('name') : wp_title(''); ?></title>
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
-	
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.10.1.min.js"></script>
-		
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/youtube-resize.js"></script>
 	
 	<?php
 		// This is to support sites with threaded comments.
@@ -28,44 +21,25 @@
 		wp_get_archives('type=monthly&format=link');
 	?>
 	
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-36078501-1']);
-		_gaq.push(['_trackPageview']);
-		
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript';
-			ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
+	<script> 
+		// Load ie.css for IE browsers including IE 10, which doesn't 
+		// support conditional statements anymore.
+		if (/*@cc_on!@*/false) {
+		  var headHTML = document.getElementsByTagName('head')[0].innerHTML;
+		  headHTML += '<link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie.css">';
+		  document.getElementsByTagName('head')[0].innerHTML = headHTML; 
+		} 
 	</script>
 
+	<!--[if lt IE 9]>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/selectivizr-min.js"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/css3-mediaqueries.js"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/html5shiv.js"></script>
 
-<script> 
-// Load ie.css for IE browsers including IE 10, which doesn't 
-// support conditional statements anymore.
-if (/*@cc_on!@*/false) {
-  var headHTML = document.getElementsByTagName('head')[0].innerHTML;
-  headHTML += '<link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie.css">';
-  document.getElementsByTagName('head')[0].innerHTML = headHTML; 
-} 
-</script>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie8.css"  />
+	<![endif]-->
 
-<!--[if lt IE 9]>
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/selectivizr-min.js"></script>
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/css3-mediaqueries.js"></script>
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/html5shiv.js"></script>
-
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie8.css"  />
-<![endif]-->
-
-
-
-
-
-		<script src=http://use.edgefonts.net/source-sans-pro;merriweather.js></script>
-
+	<script src=http://use.edgefonts.net/source-sans-pro;merriweather.js></script>
 </head>
 
 <body>
