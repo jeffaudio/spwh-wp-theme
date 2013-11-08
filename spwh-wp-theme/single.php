@@ -34,6 +34,8 @@
 			<br>
 			<div class="label"><?php _e('Tags'); ?></div> <?php the_tags('', ', ', '') ?>
 		</div>
+
+		<?php comments_template(); ?>
 	</footer>
 </article>
 <?php endwhile; ?>
