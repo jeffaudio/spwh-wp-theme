@@ -29,25 +29,27 @@ article > p {
 
 
 .double-images {
-  a:first-child { 
-      margin: 0;
-      img { margin-bottom: 1em; }
-    }
-    img {
-      width: 100%;
-      height: auto;
+	@include outer-container;
+
+	.double-image {
+		@include span-columns(6.5);
+		margin-bottom: 1em;
+		display: inline-block;
+
+		&:last-child { @include omega; }
+
+		img { 
+			width: 100%;
+			height: auto;
+			display: inline-block;
+		}
+	}
+
+  @include media($mobile) {
+  	.double-image {
+  		@include span-columns($mobile-columns);
+  	}
   }
-    
-  @include media(700px) {
-    a:first-child { 
-      margin-right: 4%; 
-      img { margin-bottom: 0; }
-    }
-    img {
-      width: 48%;
-      height: auto;
-    }
-  }  
 }
 
 /* Post Information (Author, Date, etc.) */
