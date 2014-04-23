@@ -1,6 +1,11 @@
 .DS_Store
 .sass-cache
 
-*.css
+./dev
+./dev/**/*
+
+./node_modules
+./node_modules/**/*
 
 *.css
+*.zip
