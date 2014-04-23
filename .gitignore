@@ -9,3 +9,5 @@
 
 *.css
 *.zip
+dev
+node_modules

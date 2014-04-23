@@ -1,0 +1,43 @@
+{
+  "name": "spwh-wp-theme",
+  "author": "Jeff Hentschel",
+  "version": "3.2.3",
+  "description": "SPWH Wordpress Theme",
+  "devDependencies": {
+    "chalk": "^0.4.0",
+    "dateformat": "^1.0.7-1.2.3",
+    "gulp": "^3.6.1",
+    "gulp-clean": "^0.2.4",
+    "gulp-load-plugins": "^0.5.0",
+    "gulp-load-utils": "0.0.4",
+    "gulp-notify": "^1.2.5",
+    "gulp-sass": "^0.7.1",
+    "minimist": "0.0.8"
+  },
+  "paths": {
+    "src": {
+      "base": "./spwh-wp-theme/",
+      "php": "./spwh-wp-theme/**/*.php",
+      "misc": [
+        "./spwh-wp-theme/favicon.ico",
+        "./spwh-wp-theme/screenshot.png"
+      ],
+      "scss": [
+        "./spwh-wp-theme/sass/*.scss"
+      ],
+      "js": [
+        "./spwh-wp-theme/js/*.js"
+      ],
+      "images": [
+        "./spwh-wp-theme/images/**/*"
+      ]
+    },
+    "dest": {
+      "base": "./dev/",
+      "css": "./dev/",
+      "js": "./dev/js/",
+      "images": "./dev/images/"
+    },
+    "production": "/Applications/MAMP/htdocs/wp-content/themes/spwh-wp-theme/"
+  }
+}

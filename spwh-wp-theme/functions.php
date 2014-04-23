@@ -8,6 +8,9 @@ function register_my_menu() {
 	register_nav_menu('primary-menu', __('Primary Menu'));
 }
 
+// Add editor style
+add_editor_style( 'editor.css' );
+
 // Enable post thumbnails
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size(520, 250, true);
