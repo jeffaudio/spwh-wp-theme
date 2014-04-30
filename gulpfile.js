@@ -16,7 +16,9 @@ gulp.task('clean', function() {
 
 gulp.task('compile-sass', ['clean'], function() {
 	return gulp.src(pkg.paths.src.scss)
-		.pipe(plug.sass())
+		.pipe(plug.sass({
+			includePaths: pkg.paths.lib.scss
+		}))
 		.pipe(gulp.dest(pkg.paths.dest.css));
 });
 
@@ -30,7 +32,14 @@ gulp.task('base-files', ['clean'], function() {
 		.pipe(gulp.dest(pkg.paths.dest.base))
 
 		.pipe(gulp.src(pkg.paths.src.php))
-		.pipe(gulp.dest(pkg.paths.dest.base));
+		.pipe(gulp.dest(pkg.paths.dest.base))
+
+		.pipe(gulp.src(pkg.paths.src.fonts))
+		.pipe(gulp.dest(pkg.paths.dest.fonts))
+
+		.pipe(gulp.src(pkg.paths.src.js))
+		.pipe(gulp.dest(pkg.paths.dest.js))
+		;
 })
 
 

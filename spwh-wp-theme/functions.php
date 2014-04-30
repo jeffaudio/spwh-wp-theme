@@ -1,12 +1,38 @@
 <?php
 
+// Various clean up functions
+require_once('library/cleanup.php'); 
+
+// Required for Foundation to work properly
+require_once('library/foundation.php');
+
+
+// Add menu walker
+require_once('library/menu-walker.php');
+
+// Create widget areas in sidebar and footer
+require_once('library/widget-areas.php');
+
+// Return entry meta information for posts
+require_once('library/entry-meta.php');
+
+// Enqueue scripts
+require_once('library/enqueue-scripts.php');
+
+// Add theme support
+require_once('library/theme-support.php');
+
 // Add support for WordPress 3.0's custom menus.
 add_action('init', 'register_my_menu');
 
-// Register area for custom menu.
-function register_my_menu() {
-	register_nav_menu('primary-menu', __('Primary Menu'));
-}
+register_nav_menus(array(
+  "primary-menu" => "Primary Menu",
+  "left-menu" =>"Left Menu",
+  "mobile-main" => "Main Mobile",
+  "mobile-puppy" => "Puppy Mobile",
+  "mobile-house" => "House Mobile",
+  "mobile-social" => "Social Mobile"
+));
 
 // Add editor style
 add_editor_style( 'editor.css' );
@@ -49,74 +75,32 @@ function my_image_sizes($sizes) {
         return array_merge($sizes, $customsizes);
 }
 
-
-
-
-if ( ! function_exists( 'twentyeleven_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyeleven_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Eleven 1.0
- */
-function twentyeleven_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-	?>
-	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyeleven' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?></p>
-	<?php
-			break;
-		default :
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<footer class="comment-meta">
-				<div class="comment-author vcard">
-					<?php
-						$avatar_size = 68;
-						if ( '0' != $comment->comment_parent )
-							$avatar_size = 39;
-
-						echo get_avatar( $comment, $avatar_size );
-
-						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'twentyeleven' ),
-							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
-							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
-								esc_url( get_comment_link( $comment->comment_ID ) ),
-								get_comment_time( 'c' ),
-								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s at %2$s', 'twentyeleven' ), get_comment_date(), get_comment_time() )
-							)
-						);
-					?>
-
-					<?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
-				</div><!-- .comment-author .vcard -->
-
-				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyeleven' ); ?></em>
-					<br />
-				<?php endif; ?>
-
-			</footer>
-
-			<div class="comment-content"><?php comment_text(); ?></div>
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
-
-	<?php
-			break;
-	endswitch;
+class Foundation_Nav_Menu_Walker extends Walker_Nav_Menu {
+ 
+  // add classes to ul sub-menus
+  function start_lvl(&$output, $depth) {
+    // depth dependent classes
+    $indent = ( $depth > 0 ? str_repeat("\t", $depth) : '' ); // code indent
+ 
+    // build html
+    $output .= "\n" . $indent . '<ul class="dropdown">' . "\n";
+  }
 }
-endif; // ends check for twentyeleven_comment()
+
+if (!function_exists('GC_menu_set_dropdown')) :
+function GC_menu_set_dropdown($sorted_menu_items, $args) {
+  $last_top = 0;
+  foreach ($sorted_menu_items as $key => $obj) {
+    // it is a top lv item?
+    if (0 == $obj->menu_item_parent) {
+      // set the key of the parent
+      $last_top = $key;
+    } else {
+      $sorted_menu_items[$last_top]->classes['dropdown'] = 'has-dropdown not-click';
+    }
+  }
+
+  return $sorted_menu_items;
+}
+endif;
+add_filter('wp_nav_menu_objects', 'GC_menu_set_dropdown', 10, 2);

@@ -7,8 +7,12 @@ Author URI: http://www.softpuppywarmhouse.com/
 Version: 3.0.1
 */
 
-@import "colors";
 
-p {
-	text-align: center;
-}
+@import "colors";
+@import "settings";
+
+@import "foundation-icons";
+@import "foundation";
+
+@import "typography";
+@import "layout";

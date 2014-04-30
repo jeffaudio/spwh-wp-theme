@@ -11,3 +11,4 @@
 *.zip
 dev
 node_modules
+bower_components

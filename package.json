@@ -15,9 +15,13 @@
     "minimist": "0.0.8"
   },
   "paths": {
+    "lib": {
+      "scss": ["./bower_components/foundation/scss"]
+    },
     "src": {
       "base": "./spwh-wp-theme/",
       "php": "./spwh-wp-theme/**/*.php",
+      "fonts": "./spwh-wp-theme/fonts/**/*",
       "misc": [
         "./spwh-wp-theme/favicon.ico",
         "./spwh-wp-theme/screenshot.png"
@@ -26,7 +30,10 @@
         "./spwh-wp-theme/sass/*.scss"
       ],
       "js": [
-        "./spwh-wp-theme/js/*.js"
+        "./spwh-wp-theme/js/*.js",
+        "./bower_components/jquery/dist/jquery.min.js",
+        "./bower_components/foundation/js/foundation.min.js",
+        "./bower_components/foundation/js/foundation/foundation.interchange.js"
       ],
       "images": [
         "./spwh-wp-theme/images/**/*"
@@ -36,7 +43,8 @@
       "base": "./dev/",
       "css": "./dev/",
       "js": "./dev/js/",
-      "images": "./dev/images/"
+      "images": "./dev/images/",
+      "fonts": "./dev/fonts/"
     },
     "production": "/Applications/MAMP/htdocs/wp-content/themes/spwh-wp-theme/"
   }

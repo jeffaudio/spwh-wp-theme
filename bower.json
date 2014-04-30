@@ -1,0 +1,6 @@
+{
+	"name": "spwh-wp-theme",
+	"dependencies": {
+		"foundation": "zurb/bower-foundation"
+	}
+}
