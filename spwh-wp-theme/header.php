@@ -92,7 +92,7 @@
 	[<?php echo get_template_directory_uri(); ?>/images/background-tile150@2x.gif, (retina)]
 	">
 
-	<div class="header show-for-medium-up" data-interchange="
+	<a href="/" class="header show-for-medium-up" data-interchange="
 	[<?php echo get_template_directory_uri(); ?>/images/dots.png, (default)],
 	[<?php echo get_template_directory_uri(); ?>/images/dots@2x.png, (retina)]
 	">
@@ -100,7 +100,7 @@
 			[<?php echo get_template_directory_uri(); ?>/images/logo.png, (default)],
 			[<?php echo get_template_directory_uri(); ?>/images/logo@2x.png, (retina)]
 		" />
-	</div>
+	</a>
 
 	<div class="row ad">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

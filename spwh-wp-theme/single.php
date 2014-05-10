@@ -7,10 +7,12 @@
 <?php include("article.php"); ?>
 <?php endwhile; ?>
 	 
-<div class="navigation">
-  <div id="previous"><?php previous_post_link() ?></div>
-  <div id="next"><?php next_post_link() ?></div>
+
+<div class="row navigation">
+	<div class="small-6 columns"><?php previous_post_link("%link", "<i class=\"fi-rewind\"></i> %title") ?></div>
+	<div class="small-6 columns"><?php next_post_link("%link", "%title <i class=\"fi-fast-forward\"></i>") ?></div>
 </div>
+
 
 <?php endif; ?>
 </div>

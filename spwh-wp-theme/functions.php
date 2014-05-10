@@ -25,6 +25,25 @@ require_once('library/theme-support.php');
 // Add support for WordPress 3.0's custom menus.
 add_action('init', 'register_my_menu');
 
+add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
+function my_embed_oembed_html($html, $url, $attr, $post_id) {
+  return '<div class="video-wrap">' . $html . '</div>';
+}
+
+add_filter('next_post_link', 'next_post_link_attributes');
+add_filter('previous_post_link', 'previous_post_link_attributes');
+
+function previous_post_link_attributes($output) {
+  $code = 'class="button small left"';
+  return str_replace('<a href=', '<a '.$code.' href=', $output);
+}
+
+function next_post_link_attributes($output) {
+  $code = 'class="button small right"';
+  return str_replace('<a href=', '<a '.$code.' href=', $output);
+}
+
+
 register_nav_menus(array(
   "primary-menu" => "Primary Menu",
   "left-menu" =>"Left Menu",

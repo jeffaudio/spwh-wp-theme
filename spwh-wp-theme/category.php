@@ -9,10 +9,7 @@
 <?php include("article.php"); ?>
 <?php endwhile; ?>
 
-<div class="navigation">
-	<div id="previous"><? previous_posts_link(); ?></div>
-	<div id="next"><? next_posts_link(); ?></div>
-</div>
+<?php FoundationPress_pagination(); ?>
 
 <?php endif; ?>
 </div>

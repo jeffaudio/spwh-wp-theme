@@ -1,19 +1,35 @@
 
 
-.article-header {
-	.title {
-		font-weight: bold;
+.article {
+	.article-header {
+		.title {
+			font-weight: bold;
 
-		a:hover {
-			text-decoration: none;
+			a:hover {
+				text-decoration: none;
+			}
+		}
+
+		a {
+			color: $chambourd;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 
-	a {
-		color: $chambourd;
+	.article-footer {
 
-		&:hover {
-			text-decoration: underline;
+		label {
+			font-size: 1rem;
+			font-weight: bold;
+		}
+
+		a {
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -35,5 +51,8 @@
 		
 }
 
+.footer p {
+	font-size: 0.75em;
+}
 
 
