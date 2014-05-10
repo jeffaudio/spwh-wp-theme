@@ -5,6 +5,7 @@
 </div> <!-- content -->
 
 
+
 <div class="row footer">
 	<div class="medium-6 columns">
 		<p>Ads by AdSense are automatically generated and should not be considered 

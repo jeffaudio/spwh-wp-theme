@@ -12,6 +12,46 @@
 	}
 }
 
-.row {
+.ad, .content {
 	background: #FFF;
+}
+
+.article {
+	.article-header {
+		.title {
+			border-bottom: 1px solid $chambourd;
+		}
+	}
+
+	.article-footer {
+		p {
+			margin-bottom: 0;
+		}
+
+		label {
+			font-size: 1rem;
+			font-weight: bold;
+			display: inline;
+		}
+
+		a {
+			&:hover {
+				font-style: italic;
+			}
+		}
+	}
+}
+
+.sidebar {
+	.widgettitle {
+		border-bottom: 1px solid $chambourd;
+	}
+
+	ul {
+		margin-left: 0;
+	}
+	
+	li {
+		list-style-type: none;
+	}
 }

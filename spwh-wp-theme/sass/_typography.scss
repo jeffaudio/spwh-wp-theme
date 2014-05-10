@@ -1,9 +1,39 @@
 
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
-	
+.article-header {
+	.title {
+		font-weight: bold;
+
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
 	a {
 		color: $chambourd;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
+
+
+.widget {
+	.widgettitle {
+		font-size: rem-calc(23);
+		font-weight: bold;
+	}
+
+	li a {
+		color: black;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+		
+}
+
+
+
