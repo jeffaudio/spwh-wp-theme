@@ -2,18 +2,6 @@
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
-// COLORS
-$topbar-bg: $otto-bg;
-$tabbar-bg: $otto-bg;
-
-// TYPOGRAPHY
-$header-font-family: merriweather, serif;
-$header-font-color: $chambourd;
-
-$paragraph-font-family: source-sans-pro, sans-serif;
-
-
-
 //
 // FOUNDATION SETTINGS
 //
@@ -53,7 +41,7 @@ $paragraph-font-family: source-sans-pro, sans-serif;
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -66,12 +54,13 @@ $paragraph-font-family: source-sans-pro, sans-serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+$primary-color: $chambourd;
+$secondary-color: $big-chill;
+$alert-color: $oyster-bay;
+$success-color: $shagreen;
+$warning-color: $flattering-peach;
+$info-color: $raindrop;
+
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -130,14 +119,15 @@ $paragraph-font-family: source-sans-pro, sans-serif;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: merriweather, serif;
 // $header-font-weight: normal;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: $chambourd;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
 // $header-text-rendering: optimizeLegibility;
+
 
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
@@ -168,6 +158,7 @@ $paragraph-font-family: source-sans-pro, sans-serif;
 // $paragraph-aside-line-height: 1.35;
 // $paragraph-aside-font-style: italic;
 // $paragraph-text-rendering: optimizeLegibility;
+
 
 // We use these to style <code> tags
 // $code-color: scale-color($alert-color, $lightness: -27%);
@@ -672,7 +663,7 @@ $paragraph-font-family: source-sans-pro, sans-serif;
 
 // $include-html-off-canvas-classes: $include-html-classes;
 
-// $tabbar-bg: #333;
+$tabbar-bg: $otto-bg;
 // $tabbar-height: rem-calc(45);
 // $tabbar-line-height: $tabbar-height;
 // $tabbar-color: #fff;
@@ -1180,7 +1171,7 @@ $paragraph-font-family: source-sans-pro, sans-serif;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: $otto-bg;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin

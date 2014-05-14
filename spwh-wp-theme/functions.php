@@ -27,7 +27,7 @@ add_action('init', 'register_my_menu');
 
 add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
 function my_embed_oembed_html($html, $url, $attr, $post_id) {
-  return '<div class="video-wrap">' . $html . '</div>';
+  return '<div class="flex-video">' . $html . '</div>';
 }
 
 add_filter('next_post_link', 'next_post_link_attributes');

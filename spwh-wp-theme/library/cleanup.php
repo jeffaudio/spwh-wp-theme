@@ -28,7 +28,7 @@ function start_cleanup() {
     // additional post related cleaning
     add_filter('get_image_tag_class', 'image_tag_class', 0, 4);
     add_filter('get_image_tag', 'image_editor', 0, 4);
-    add_filter( 'the_content', 'img_unautop', 30 );
+    
 
 } 
 
@@ -169,10 +169,5 @@ function image_editor($html, $id, $alt, $title) {
         $html);
 } 
 
-// Wrap images with figure tag 
-function img_unautop($pee) {
-    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure>$1</figure>', $pee);
-    return $pee;
-} 
 
 ?>

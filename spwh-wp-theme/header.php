@@ -45,43 +45,37 @@
 	</div>
 		
 	<div class="middle tab-bar-section">
-		<h1 class="title small-title">
-			<img data-interchange="
-				[<?php echo get_template_directory_uri(); ?>/images/logo-sm.png, (default)],
-				[<?php echo get_template_directory_uri(); ?>/images/logo-sm@2x.png, (retina)]
-			" />
-		</h1>
+		<h1 class="title">Soft Puppy Warm House</h1>
 	</div>
 </div>
 
+
+
 <div class="left-off-canvas-menu">
-	<?php wp_nav_menu(array(
-		"menu_class" => "off-canvas-list",
-		"theme_location" => "mobile-main",
-		"depth" => 1,
-		"container" => "",
-	)); ?>
+	<p class="text-center">
+		<img class="off-canvas-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" />
+	</p>
 
-	<?php wp_nav_menu(array(
-		"menu_class" => "off-canvas-list",
-		"theme_location" => "mobile-puppy",
-		"depth" => 1,
-		"container" => "",
-	)); ?>
+	<ul class="off-canvas-list">
+		<li><label><i class="fi-info"></i> Main</label></li>
+		<li><a href="#">About Us</a></li>
+	</ul>
 
-	<?php wp_nav_menu(array(
-		"menu_class" => "off-canvas-list",
-		"theme_location" => "mobile-house",
-		"depth" => 1,
-		"container" => "",
-	)); ?>
+	<ul class="off-canvas-list">
+		<li><label><i class="fi-paw"></i> Soft Puppy</label></li>
+		<li><a href="#">Training Nova</a></li>
+		<li><a href="#">Puppy Projects</a></li>
+		<li><a href="#">Puppy News</a></li>
+	</ul>
 
-	<?php wp_nav_menu(array(
-		"menu_class" => "off-canvas-list",
-		"theme_location" => "mobile-social",
-		"depth" => 1,
-		"container" => "",
-	)); ?>
+	<ul class="off-canvas-list">
+		<li><label><i class="fi-home"></i> Warm House</label></li>
+		<li><a href="#">The List</a></li>
+		<li><a href="#">Projects</a></li>
+		<li><a href="#">Technology</a></li>
+	</ul>
+
+	
 </div>
 					
 			
@@ -104,13 +98,12 @@
 
 	<div class="row ad">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Top Responsive Banner -->
+<!-- Responsive -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-2225099296195937"
-     data-ad-slot="8748334797"
-     data-ad-format="auto"
-     google_adtest="on"></ins>
+     data-ad-slot="2858944790"
+     data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
