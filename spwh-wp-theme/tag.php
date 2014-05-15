@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="blog">
+<div id="blog">
     
 <?php if(have_posts()) : ?>
 <header class="page-header">
@@ -18,6 +18,6 @@
 </div>
 
 <?php endif; ?>
-</section>
+</div>
 
 <?php get_footer(); ?>

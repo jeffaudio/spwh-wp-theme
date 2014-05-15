@@ -8,7 +8,7 @@ class top_bar_walker extends Walker_Nav_Menu {
 	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 		$element->has_children = !empty( $children_elements[$element->ID] );
 		$element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
-		$element->classes[] = ( $element->has_children ) ? 'has-dropdown' : '';
+		$element->classes[] = ( $element->has_children ) ? 'has-dropdown not-click' : '';
 		
 		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
 	}
@@ -39,24 +39,4 @@ class top_bar_walker extends Walker_Nav_Menu {
 	
 }
 
-
-class OffCanvasWalker extends Walker_Nav_Menu {
-	public $count;
-	
-	function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
-
-		$item_html = '';
-		parent::start_el( $item_html, $object, $depth, $args ); 
-		
-
-		$classes = empty( $object->classes ) ? array() : (array) $object->classes;  
-		
-		if( in_array('first-menu-item', $classes) ) {
-			$item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
-		}
-		
-		$output .= $item_html;
-	}
-
-}
 ?>

@@ -6,7 +6,6 @@ require_once('library/cleanup.php');
 // Required for Foundation to work properly
 require_once('library/foundation.php');
 
-
 // Add menu walker
 require_once('library/menu-walker.php');
 
@@ -21,6 +20,18 @@ require_once('library/enqueue-scripts.php');
 
 // Add theme support
 require_once('library/theme-support.php');
+
+ wp_deregister_script( 'jquery' );
+
+    // register scripts
+    wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '2.1.0', true );
+    wp_register_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('jquery'), '5.0.0', true );
+    wp_register_script( 'foundation-interchange', get_template_directory_uri() . '/js/foundation.interchange.js', array('jquery', 'foundation'), '5.0.0', true );
+
+    // enqueue scripts
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('foundation');
+    wp_enqueue_script('foundation-interchange');
 
 // Add support for WordPress 3.0's custom menus.
 add_action('init', 'register_my_menu');
@@ -47,29 +58,13 @@ function next_post_link_attributes($output) {
 register_nav_menus(array(
   "primary-menu" => "Primary Menu",
   "left-menu" =>"Left Menu",
-  "mobile-main" => "Main Mobile",
-  "mobile-puppy" => "Puppy Mobile",
-  "mobile-house" => "House Mobile",
-  "mobile-social" => "Social Mobile"
 ));
 
 // Add editor style
 add_editor_style( 'editor.css' );
 
-// Enable post thumbnails
-add_theme_support('post-thumbnails');
-set_post_thumbnail_size(520, 250, true);
 
-// Enable widgets for sidebar
-if (function_exists('register_sidebar')) {
-	register_sidebar();
-}
-	
-// Enable automatic feed links.
-add_theme_support('automatic-feed-links');
 
-// Enable multisite feature (WP 3.0)
-define('WP_ALLOW_MULTISITE', true);
 
 /* Image Sizes for Blog */
 if ( function_exists( 'add_image_size' ) ) {
@@ -94,32 +89,6 @@ function my_image_sizes($sizes) {
         return array_merge($sizes, $customsizes);
 }
 
-class Foundation_Nav_Menu_Walker extends Walker_Nav_Menu {
- 
-  // add classes to ul sub-menus
-  function start_lvl(&$output, $depth) {
-    // depth dependent classes
-    $indent = ( $depth > 0 ? str_repeat("\t", $depth) : '' ); // code indent
- 
-    // build html
-    $output .= "\n" . $indent . '<ul class="dropdown">' . "\n";
-  }
-}
 
-if (!function_exists('GC_menu_set_dropdown')) :
-function GC_menu_set_dropdown($sorted_menu_items, $args) {
-  $last_top = 0;
-  foreach ($sorted_menu_items as $key => $obj) {
-    // it is a top lv item?
-    if (0 == $obj->menu_item_parent) {
-      // set the key of the parent
-      $last_top = $key;
-    } else {
-      $sorted_menu_items[$last_top]->classes['dropdown'] = 'has-dropdown not-click';
-    }
-  }
 
-  return $sorted_menu_items;
-}
-endif;
-add_filter('wp_nav_menu_objects', 'GC_menu_set_dropdown', 10, 2);
+
