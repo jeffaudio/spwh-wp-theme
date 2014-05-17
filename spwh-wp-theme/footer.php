@@ -30,9 +30,9 @@ an endorsement by Soft Puppy Warm House or any of the writers of this site.</p>
   ga('send', 'pageview');
 </script>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/foundation.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/foundation.interchange.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/js/foundation.min.js"></script>
+
 <script>
 	$(document).foundation();
 </script>

@@ -45,7 +45,7 @@
 	</div>
 		
 	<div class="middle tab-bar-section">
-		<h1 class="title">Soft Puppy Warm House</h1>
+		<h2 class="title">Soft Puppy Warm House</h2>
 	</div>
 </div>
 

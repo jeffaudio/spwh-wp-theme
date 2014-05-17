@@ -15,23 +15,8 @@ require_once('library/widget-areas.php');
 // Return entry meta information for posts
 require_once('library/entry-meta.php');
 
-// Enqueue scripts
-require_once('library/enqueue-scripts.php');
-
 // Add theme support
 require_once('library/theme-support.php');
-
- wp_deregister_script( 'jquery' );
-
-    // register scripts
-    wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '2.1.0', true );
-    wp_register_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('jquery'), '5.0.0', true );
-    wp_register_script( 'foundation-interchange', get_template_directory_uri() . '/js/foundation.interchange.js', array('jquery', 'foundation'), '5.0.0', true );
-
-    // enqueue scripts
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('foundation');
-    wp_enqueue_script('foundation-interchange');
 
 // Add support for WordPress 3.0's custom menus.
 add_action('init', 'register_my_menu');
