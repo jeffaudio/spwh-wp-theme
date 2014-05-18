@@ -4,16 +4,17 @@ Theme URI: https://github.com/jeffaudio/spwh-wp-theme
 Description: Wordpress theme for SPWH blog.
 Author: Jeff Hentschel
 Author URI: http://www.softpuppywarmhouse.com/
-Version: 3.2.3
+Version: 4.0.0
 */
 
-@import "mixins";
+
 @import "colors";
+@import "settings";
+
+@import "foundation-icons";
+@import "foundation";
+
+@import "typography";
 @import "layout";
 
-@import "text";
-@import "nav";
-@import "search";
-@import "widgets";
-@import "blog";
-@import "projects";
+@import "facebook";

@@ -1,76 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no" />
-
-	
-	<title><?php is_front_page() ? bloginfo('name') : wp_title(''); ?></title>
-	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	
-	<?php
-		// This is to support sites with threaded comments.
-		if (is_singular() && get_option('thread_comments'))
-			wp_enqueue_script('comment-reply');
-			
-		wp_head();
-		
-		wp_get_archives('type=monthly&format=link');
-	?>
-	
-	<script> 
-		// Load ie.css for IE browsers including IE 10, which doesn't 
-		// support conditional statements anymore.
-		if (/*@cc_on!@*/false) {
-		  var headHTML = document.getElementsByTagName('head')[0].innerHTML;
-		  headHTML += '<link type="text/css" rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie.css">';
-		  document.getElementsByTagName('head')[0].innerHTML = headHTML; 
-		} 
-	</script>
 
-	<!--[if lt IE 9]>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/selectivizr-min.js"></script>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/css3-mediaqueries.js"></script>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/html5shiv.js"></script>
+	<title><?php is_front_page() ? bloginfo('name') : wp_title(''); ?></title>
 
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie8.css"  />
-	<![endif]-->
+	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
 
 	<script src=http://use.edgefonts.net/source-sans-pro;merriweather.js></script>
+
+	<?php wp_head(); ?>
 </head>
 
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=374432455973695";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<div class="off-canvas-wrap">
+<div class="inner-wrap">
+			
+<div class="top-bar hide-for-small" data-offcanvas>
+	<div class="top-bar-section">
+		<?php wp_nav_menu(array(
+			"container" => false,
+			"menu_class" => "left",
+			"theme_location" => "social-menu",
+			"depth" => 1
 
+		)); ?>
 
-<div id="page">
-	<a href="/"><header id="banner" role="banner"></header></a>
-	
-	<main role="main">
-		<div class="widget_search" id="small-search">
-			<form class="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<input type="text" class="search-text" name="s" placeholder="<?php esc_attr_e( 'Search...' ); ?>" />
-				<button type="submit" name="submit" class="search-button"><?php esc_attr_e( 'Go' ); ?></button>
-			</form>
-		</div>
+		<?php wp_nav_menu(array(
+			"menu_class" => "right",
+			"theme_location" => "primary-menu",
+			"depth" => 2,
+			"container" => false,
+			"walker" => new top_bar_walker()
+		)); ?>
+	</div>
+</div>
+
+<div class="tab-bar show-for-small">
+	<div class="left-small">
+		<a href="#" class="left-off-canvas-toggle menu-icon"><span></span></a>
+	</div>
 		
-		<nav id="navigation" role="navigation">
-			<?php 
-			$menu = wp_nav_menu(array('sort_column'=>'menu_order', 
-						'container' => '', 
-						'theme_location'=>'primary-menu',
-						'echo'=>0));
-			$menu = str_replace("/li><li", "/li> <li", $menu);
-			echo $menu;
-			?>
-		</nav>							
+	<div class="middle tab-bar-section">
+		<h2 class="title">Soft Puppy Warm House</h2>
+	</div>
+</div>
+
+
+
+<div class="left-off-canvas-menu">
+	<p class="text-center">
+		<img class="off-canvas-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" />
+	</p>
+
+	<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('offcanvas-menu') ) : else : ?>
+	<?php endif; ?>	
+	
+</div>
+					
+			
+
+
+<div class="main-section" data-interchange="
+	[<?php echo get_template_directory_uri(); ?>/images/background-tile150.gif, (default)],
+	[<?php echo get_template_directory_uri(); ?>/images/background-tile150@2x.gif, (retina)]
+	">
+
+	<a href="/" class="header show-for-medium-up" data-interchange="
+	[<?php echo get_template_directory_uri(); ?>/images/dots.png, (default)],
+	[<?php echo get_template_directory_uri(); ?>/images/dots@2x.png, (retina)]
+	">
+		<img data-interchange="
+			[<?php echo get_template_directory_uri(); ?>/images/logo.png, (default)],
+			[<?php echo get_template_directory_uri(); ?>/images/logo@2x.png, (retina)]
+		" />
+	</a>
+
+	<div class="row ad">
+		<div class="row ad">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+			<style>
+				.responsive { width: 320px; height: 50px; }
+				@media(min-width: 500px) { .responsive { width: 468px; height: 60px; } }
+				@media(min-width: 800px) { .responsive { width: 728px; height: 90px; } }
+			</style>
+
+			<!-- responsive -->
+			<ins class="adsbygoogle responsive"
+				style="display:inline-block"
+				data-ad-client="ca-pub-2225099296195937"
+				data-ad-slot="1973980798"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+
+	<div class="row content">
+		<div class="small-12 medium-8 large-9 columns">
+
+			<div class="row collapse show-for-small">
+				<h3></h3>
+				<?php get_search_form(); ?>
+			</div>
+				

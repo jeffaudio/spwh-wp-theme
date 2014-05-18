@@ -1,0 +1,62 @@
+.tab-bar .title {
+	font-size: 0.95rem;
+}
+
+.article {
+	.article-header {
+		.title {
+			font-weight: bold;
+
+
+			a:hover {
+				text-decoration: none;
+			}
+		}
+
+		a {
+			color: $chambourd;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.article-footer {
+
+		label {
+			font-size: 1rem;
+			font-weight: bold;
+		}
+
+		a {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+
+.widget {
+	text-align: center;
+
+	.widgettitle {
+		font-size: rem-calc(23);
+		font-weight: bold;
+		text-align: left;
+	}
+
+	li a {
+		color: black;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+}
+
+.footer p {
+	font-size: 0.75em;
+}
+

@@ -1,27 +1,58 @@
 <?php
 
+// Various clean up functions
+require_once('library/cleanup.php'); 
+
+// Required for Foundation to work properly
+require_once('library/foundation.php');
+
+// Add menu walker
+require_once('library/menu-walker.php');
+
+// Create widget areas in sidebar and footer
+require_once('library/widget-areas.php');
+
+// Return entry meta information for posts
+require_once('library/entry-meta.php');
+
+// Add scripts
+require_once('library/enqueue-scripts.php');
+
+// Add theme support
+require_once('library/theme-support.php');
+
 // Add support for WordPress 3.0's custom menus.
 add_action('init', 'register_my_menu');
 
-// Register area for custom menu.
-function register_my_menu() {
-	register_nav_menu('primary-menu', __('Primary Menu'));
+add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
+function my_embed_oembed_html($html, $url, $attr, $post_id) {
+  return '<div class="flex-video">' . $html . '</div>';
 }
 
-// Enable post thumbnails
-add_theme_support('post-thumbnails');
-set_post_thumbnail_size(520, 250, true);
+add_filter('next_post_link', 'next_post_link_attributes');
+add_filter('previous_post_link', 'previous_post_link_attributes');
 
-// Enable widgets for sidebar
-if (function_exists('register_sidebar')) {
-	register_sidebar();
+function previous_post_link_attributes($output) {
+  $code = 'class="button small left"';
+  return str_replace('<a href=', '<a '.$code.' href=', $output);
 }
-	
-// Enable automatic feed links.
-add_theme_support('automatic-feed-links');
 
-// Enable multisite feature (WP 3.0)
-define('WP_ALLOW_MULTISITE', true);
+function next_post_link_attributes($output) {
+  $code = 'class="button small right"';
+  return str_replace('<a href=', '<a '.$code.' href=', $output);
+}
+
+
+register_nav_menus(array(
+  "primary-menu" => "Primary Menu",
+  "social-menu" =>"Left Social Menu",
+));
+
+// Add editor style
+add_editor_style( 'editor.css' );
+
+
+
 
 /* Image Sizes for Blog */
 if ( function_exists( 'add_image_size' ) ) {
@@ -49,71 +80,3 @@ function my_image_sizes($sizes) {
 
 
 
-if ( ! function_exists( 'twentyeleven_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyeleven_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Eleven 1.0
- */
-function twentyeleven_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-	?>
-	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyeleven' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?></p>
-	<?php
-			break;
-		default :
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<footer class="comment-meta">
-				<div class="comment-author vcard">
-					<?php
-						$avatar_size = 68;
-						if ( '0' != $comment->comment_parent )
-							$avatar_size = 39;
-
-						echo get_avatar( $comment, $avatar_size );
-
-						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'twentyeleven' ),
-							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
-							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
-								esc_url( get_comment_link( $comment->comment_ID ) ),
-								get_comment_time( 'c' ),
-								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s at %2$s', 'twentyeleven' ), get_comment_date(), get_comment_time() )
-							)
-						);
-					?>
-
-					<?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
-				</div><!-- .comment-author .vcard -->
-
-				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyeleven' ); ?></em>
-					<br />
-				<?php endif; ?>
-
-			</footer>
-
-			<div class="comment-content"><?php comment_text(); ?></div>
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
-
-	<?php
-			break;
-	endswitch;
-}
-endif; // ends check for twentyeleven_comment()

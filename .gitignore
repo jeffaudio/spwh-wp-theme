@@ -1,14 +1,14 @@
 .DS_Store
 .sass-cache
 
-*.css
+./dev
+./dev/**/*
+
+./node_modules
+./node_modules/**/*
 
 *.css
-
-*.css
-
-<<<<<<< HEAD
 *.zip
-=======
-spwh-wp-theme.zip
->>>>>>> f74960b1fd6d278056990aeac9fcd996967655b7
+dev
+node_modules
+bower_components

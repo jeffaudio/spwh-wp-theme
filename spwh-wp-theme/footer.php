@@ -1,31 +1,41 @@
-	</main>
+	</div> <!-- article columns -->
 
 	<?php get_sidebar(); ?>
 
-	<footer id="contentinfo" role="contentinfo">
-			<p>Content &copy; 2013 <?php bloginfo('name'); ?> unless otherwise stated.
-			<br/>Theme Design by Jeff Hentschel and available on <a href="https://github.com/jeffaudio/spwh-wp-theme">github</a> under GPLv3.
-			<br/>Entypo pictograms by <a href="//www.entypo.com">Daniel Bruce</a>.
-		</footer>
+</div> <!-- content -->
+
+
+
+<div class="row footer">
+	<div class="medium-6 columns">
+		<p>Ads by AdSense are automatically generated and should not be considered 
+an endorsement by Soft Puppy Warm House or any of the writers of this site.</p>
+
+		<p>Content © <?php echo date('Y'); ?> Soft Puppy Warm House unless otherwise stated.
+		<br/>Theme Design by Jeff Hentschel and available on <a href="https://github.com/jeffaudio/spwh-wp-theme/" target="new">github</a> under GPLv3.</p>
 	</div>
+</div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</div> <!-- main section -->
+</div> <!-- inner wrap -->
+</div> <!-- off canvas wrap -->
 
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/youtube-resize.min.js"></script>
-	
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-36078501-1']);
-		_gaq.push(['_trackPageview']);
-		
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript';
-			ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	<html xmlns:fb="http://ogp.me/ns/fb#">
+  ga('create', 'UA-36078501-1', 'softpuppywarmhouse.com');
+  ga('send', 'pageview');
+</script>
+
+
+<?php wp_footer(); ?>
+<script>
+	$(document).foundation();
+</script>
 </body>
 </html>
+
+	
