@@ -37,7 +37,9 @@
 
 
 .article {
-	margin-bottom: 1em;
+	margin-bottom: 1.25em;
+
+
 
 	.article-header {
 		.title {
@@ -58,13 +60,16 @@
 	}
 }
 
-.sidebar {
-	margin-left: 0;
-
+.widget {
 	.widgettitle {
+		text-align: left;
 		border-bottom: 1px solid $chambourd;
 	}
 
+	text-align: center;
+}
+
+.sidebar {
 	ul {
 		margin-left: 0;
 	}

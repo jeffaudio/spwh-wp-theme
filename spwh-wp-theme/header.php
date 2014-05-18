@@ -82,7 +82,23 @@
 	</a>
 
 	<div class="row ad">
-		<div class="small-12 columns">
+		<div class="row ad">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+			<style>
+				.responsive { width: 320px; height: 50px; }
+				@media(min-width: 500px) { .responsive { width: 468px; height: 60px; } }
+				@media(min-width: 800px) { .responsive { width: 728px; height: 90px; } }
+			</style>
+
+			<!-- responsive -->
+			<ins class="adsbygoogle responsive"
+				style="display:inline-block"
+				data-ad-client="ca-pub-2225099296195937"
+				data-ad-slot="1973980798"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
 	</div>
 
