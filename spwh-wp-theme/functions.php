@@ -15,6 +15,9 @@ require_once('library/widget-areas.php');
 // Return entry meta information for posts
 require_once('library/entry-meta.php');
 
+// Add scripts
+require_once('library/enqueue-scripts.php');
+
 // Add theme support
 require_once('library/theme-support.php');
 
@@ -42,7 +45,7 @@ function next_post_link_attributes($output) {
 
 register_nav_menus(array(
   "primary-menu" => "Primary Menu",
-  "left-menu" =>"Left Menu",
+  "social-menu" =>"Left Social Menu",
 ));
 
 // Add editor style
