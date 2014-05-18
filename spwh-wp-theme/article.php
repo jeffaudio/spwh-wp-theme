@@ -12,7 +12,7 @@
 			  endif;
 			?>
 
-			<li class="right">
+			<li class="small-only-left medium-up-right">
 				<p><fb:like 
 					href="<?php the_permalink(); ?>" 
 					layout="button_count" 

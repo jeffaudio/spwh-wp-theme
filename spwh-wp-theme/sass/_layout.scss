@@ -74,6 +74,30 @@
 	}
 }
 
+.off-canvas-list {
+	text-align: left;
+
+	li {
+		list-style-type: none;
+	}
+}
+
+.small-only-left {
+	@media #{$small-only} { 
+		float: left ! important;
+	}	
+}
+
+.medium-up-right {
+	@media #{$medium-up} { 
+		float: right ! important;
+	}	
+}
+
+.left-off-canvas-menu li {
+	list-style-type: none;
+}
+
 
 // These widgets should be left-aligned.
 .widget_archive, .widget_categories, .widget_tag_cloud {
