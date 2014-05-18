@@ -39,9 +39,12 @@
 
 
 .widget {
+	text-align: center;
+
 	.widgettitle {
 		font-size: rem-calc(23);
 		font-weight: bold;
+		text-align: left;
 	}
 
 	li a {
@@ -51,7 +54,6 @@
 			font-weight: bold;
 		}
 	}
-		
 }
 
 .footer p {

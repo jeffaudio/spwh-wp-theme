@@ -4,18 +4,24 @@
 		<ul class="inline-list">
 			<li><p><i class="fi-calendar"></i> <?php the_time("l, M. j, Y"); ?></p></li>
 			<li><p><i class="fi-torso"></i> <?php the_author_posts_link(); ?></p></li>
-
-			<?php if ( comments_open() ) : echo '<li><p><i class="fi-comments"></i> ';
-				comments_popup_link( '0 comments', '1 comment', '% comments', 'comments-link', 'Comments Disabled');
-			echo '</p></li>';
-				endif;
-			?>
+			<li><p><i class="fi-comments"></i> <a href="<?php the_permalink(); ?>">Comments: <fb:comments-count href="<?php the_permalink(); ?>"></fb:comments-count></a></p></li>
 
 			<?php if (current_user_can( 'manage_options' )) : echo '<li><p><i class="fi-page-edit"></i> ';
 			  edit_post_link('Edit', '', '');
 			  echo '</li>';
 			  endif;
 			?>
+
+			<li class="right">
+				<p><fb:like 
+					href="<?php the_permalink(); ?>" 
+					layout="button_count" 
+					action="like"
+					show_faces="false" 
+					share="true">
+				</fb:like>
+				</p>
+			</li>
 		</ul>
 	</div>
 

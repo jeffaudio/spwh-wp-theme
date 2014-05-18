@@ -14,6 +14,14 @@ gulp.task('clean', function() {
 		.pipe(plug.clean({read: false}));
 });
 
+gulp.task('minify-css', ['compile-sass'], function() {
+	return gulp.src(pkg.paths.dest.css + "/*.css")
+		.pipe(plug.minifyCss({ 
+			keepSpecialComments: "*"
+		}))
+		.pipe(gulp.dest(pkg.paths.dest.css));
+})
+
 gulp.task('compile-sass', ['clean'], function() {
 	return gulp.src(pkg.paths.src.scss)
 		.pipe(plug.sass({
@@ -53,6 +61,17 @@ gulp.task('default', ['compile-sass', 'images', 'base-files'], function() {
 			message: "Compiled and copied to production directory!"
       }));
 
+});
+
+gulp.task('deploy', ['compile-sass', 'minify-css', 'images', 'base-files'], function() {
+	return gulp.src(pkg.paths.dest.base + "/**/*")
+		.pipe(plug.zip(pkg.name + '-' + pkg.version + '.zip'))
+		.pipe(gulp.dest(pkg.paths.zip))
+
+		.pipe(plug.notify({
+			onLast: true,
+			message: "SPWH Theme Zipped and ready for production!"
+		}));
 });
 
 gulp.task('watch-src', function() {

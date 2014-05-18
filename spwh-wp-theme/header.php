@@ -13,6 +13,8 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
 
 	<script src=http://use.edgefonts.net/source-sans-pro;merriweather.js></script>
+
+	<?php wp_head(); ?>
 </head>
 
 <body>
@@ -56,25 +58,8 @@
 		<img class="off-canvas-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" />
 	</p>
 
-	<ul class="off-canvas-list">
-		<li><label><i class="fi-info"></i> Main</label></li>
-		<li><a href="#">About Us</a></li>
-	</ul>
-
-	<ul class="off-canvas-list">
-		<li><label><i class="fi-paw"></i> Soft Puppy</label></li>
-		<li><a href="#">Training Nova</a></li>
-		<li><a href="#">Puppy Projects</a></li>
-		<li><a href="#">Puppy News</a></li>
-	</ul>
-
-	<ul class="off-canvas-list">
-		<li><label><i class="fi-home"></i> Warm House</label></li>
-		<li><a href="#">The List</a></li>
-		<li><a href="#">Projects</a></li>
-		<li><a href="#">Technology</a></li>
-	</ul>
-
+	<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('offcanvas-menu') ) : else : ?>
+	<?php endif; ?>	
 	
 </div>
 					
@@ -97,20 +82,12 @@
 	</a>
 
 	<div class="row ad">
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Responsive -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2225099296195937"
-     data-ad-slot="2858944790"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+		<div class="small-12 columns">
+		</div>
 	</div>
 
 	<div class="row content">
-		<div class="small-12 medium-9 columns">
+		<div class="small-12 medium-8 large-9 columns">
 
 			<div class="row collapse show-for-small">
 				<h3></h3>

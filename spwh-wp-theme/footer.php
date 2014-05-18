@@ -32,7 +32,7 @@ an endorsement by Soft Puppy Warm House or any of the writers of this site.</p>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/js/foundation.min.js"></script>
-
+<?php wp_footer(); ?>
 <script>
 	$(document).foundation();
 </script>

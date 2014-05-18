@@ -1,0 +1,12 @@
+// Styles to make facebook work better.
+
+// Like button alignment.
+.fb_iframe_widget span {
+	vertical-align: top ! important;
+}
+
+// Responsive comments.
+.fb-comments span, 
+.fb-comments iframe {
+	width: 100% ! important;
+}

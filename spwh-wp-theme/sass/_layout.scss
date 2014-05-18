@@ -19,6 +19,8 @@
 
 .ad {
 	max-height: 300px;
+	padding: 1em 0;
+	text-align: center;
 }
 
 .ad, .content {
@@ -35,6 +37,8 @@
 
 
 .article {
+	margin-bottom: 1em;
+
 	.article-header {
 		.title {
 			border-bottom: 1px solid $chambourd;
@@ -55,6 +59,8 @@
 }
 
 .sidebar {
+	margin-left: 0;
+
 	.widgettitle {
 		border-bottom: 1px solid $chambourd;
 	}
@@ -62,10 +68,16 @@
 	ul {
 		margin-left: 0;
 	}
-	
+
 	li {
 		list-style-type: none;
 	}
+}
+
+
+// These widgets should be left-aligned.
+.widget_archive, .widget_categories, .widget_tag_cloud {
+	text-align: left;
 }
 
 .footer {
