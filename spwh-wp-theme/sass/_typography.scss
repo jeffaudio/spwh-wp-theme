@@ -60,3 +60,19 @@
 	font-size: 0.75em;
 }
 
+.article-body a{
+	border-bottom:1px dotted #57474F;
+	
+	&:hover {
+		border-bottom-style:solid;
+	}
+}
+
+.addthis_toolbox a{
+	border-style:none;
+	
+	&:hover {
+		border-style:none;
+	}	
+}
+
